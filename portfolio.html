@@ -1,198 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graphic Design Portfolio - Lillian Pulaski</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: #f8f9fa;
-            zoom: 75%;
-        }
-
-        .header {
-            background: #667eea;
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-            margin-left: calc(-50vw / 0.75 + 50%);
-            margin-right: calc(-50vw / 0.75 + 50%);
-        }
-
-        .header h1 {
-            font-size: 3em;
-            font-weight: 900;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-        }
-
-        .header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 50px 20px;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-
-        .project {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-header {
-            margin-bottom: 15px;
-        }
-
-        .project-header h3 {
-            font-size: 1.5em;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .project-header p {
-            color: #666;
-            font-size: 0.95em;
-            line-height: 1.6;
-            margin-bottom: 12px;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 15px;
-        }
-
-        .tag {
-            background: #667eea;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.8em;
-            font-weight: 600;
-        }
-
-        .project-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .project-gallery.single {
-            grid-template-columns: 1fr;
-        }
-
-        .project-gallery.stacked {
-            grid-template-columns: 1fr;
-        }
-
-        .project-image {
-            width: 100%;
-            aspect-ratio: auto;
-            min-height: 200px;
-            background: transparent;
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 2em;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .back-button-container {
-            text-align: center;
-            padding: 30px 0;
-        }
-
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: white;
-            color: #667eea;
-            padding: 12px 30px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-            border: 2px solid transparent;
-            transition: background 0.3s, border 0.3s, color 0.3s;
-        }
-
-        .back-button:hover {
-            background: #667eea;
-            border: 2px solid #667eea;
-            color: white;
-        }
-        
-        .back-button i {
-            color: #667eea;
-            transition: color 0.3s;
-        }
-        
-        .back-button:hover i {
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2em;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .project {
-                padding: 20px;
-            }
-
-            .project-gallery {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>GRAPHIC DESIGN PORTFOLIO</h1>
-        <p>Lillian Pulaski</p>
-    </div>
-    
-    <div class="container">
-        <div class="projects-grid">
-            <!-- Project 1 -->
+<div class="projects-grid">
+            <!-- Project 1 - CD Jewel Case -->
             <div class="project">
                 <div class="project-header">
                     <h3>CD Jewel Case Design</h3>
@@ -219,7 +26,29 @@
                 </div>
             </div>
 
-            <!-- Project 2 -->
+            <!-- Project 2 - Kinetic Typography -->
+            <div class="project">
+                <div class="project-header">
+                    <h3>Kinetic Typography</h3>
+                    <h5>OCTOBER 2025</h5>
+                    <p>An exploration of how motion design can reinforce meaning through the transformation of uppercase to lowercase letterforms using two opposing concepts. Animated two contrasting words to demonstrate how movement amplifies typography while working within a five-frame constraint.</p>
+                    <div class="project-tags">
+                        <span class="tag">Adobe Illustrator</span>
+                        <span class="tag">Adobe Photoshop</span>
+                    </div>
+                </div>
+
+                <div class="project-gallery stacked">
+                    <div class="project-image">
+                        <img src="images/300_P2_Pulaski_Word1_Rigid.gif" alt="Rigid GIF">
+                    </div>
+                    <div class="project-image">
+                        <img src="images/300_P2_Pulaski_Word2_Fluid.gif" alt="Fluid GIF">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 - White Mountains Poster -->
             <div class="project">
                 <div class="project-header">
                     <h3>White Mountains Travel Poster</h3>
@@ -237,7 +66,7 @@
                 </div>
             </div>
 
-            <!-- Project 3 -->
+            <!-- Project 4 - South Park Poster -->
             <div class="project">
                 <div class="project-header">
                     <h3>South Park Poster</h3>
@@ -254,7 +83,7 @@
                 </div>
             </div>
 
-            <!-- Project 4 -->
+            <!-- Project 5 - Techno-Tax Logo -->
             <div class="project">
                 <div class="project-header">
                     <h3>Techno-Tax Logo</h3>
@@ -274,7 +103,7 @@
                 </div>
             </div>
 
-            <!-- Project 5 -->
+            <!-- Project 6 - Panel Composition -->
             <div class="project">
                 <div class="project-header">
                     <h3>Panel Composition</h3>
@@ -305,36 +134,4 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Project 6 -->
-            <div class="project">
-                <div class="project-header">
-                    <h3>Kinetic Typography</h3>
-                    <h5>OCTOBER 2025</h5>
-                    <p>An exploration of how motion design can reinforce meaning through the transformation of uppercase to lowercase letterforms using two opposing concepts. Animated two contrasting words to demonstrate how movement amplifies typography while working within a five-frame constraint.</p>
-                    <div class="project-tags">
-                        <span class="tag">Adobe Illustrator</span>
-                        <span class="tag">Adobe Photoshop</span>
-                    </div>
-                </div>
-
-                <div class="project-gallery stacked">
-                    <div class="project-image">
-                        <img src="images/300_P2_Pulaski_Word1_Rigid.gif" alt="Rigid GIF">
-                    </div>
-                    <div class="project-image">
-                        <img src="images/300_P2_Pulaski_Word2_Fluid.gif" alt="Fluid GIF">
-                    </div>
-                </div>
-            </div>
         </div>
-
-        <div class="back-button-container">
-            <a href="index.html" class="back-button">
-                <i class="fas fa-arrow-left"></i>
-                Back to Resume
-            </a>
-        </div>
-    </div>
-</body>
-</html>
