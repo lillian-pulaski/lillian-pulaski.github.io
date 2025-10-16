@@ -3,12 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lillian Pulaski - Resume</title>
-  <link rel="icon" type="image/svg+xml" href="images/icon3.svg" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <title>Lillian Pulaski - Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="images/icon.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     * {
       margin: 0;
@@ -16,17 +13,15 @@
       box-sizing: border-box;
     }
 
-    html,
-    body {
+    html, body {
       overflow-x: hidden;
     }
 
     body {
-      font-family: "Helvetica Neue", "Helvetica", sans-serif;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
       line-height: 1.5;
       color: #1a1a1a;
       background: white;
-      zoom: 75%;
     }
 
     .container {
@@ -35,13 +30,17 @@
       background: white;
     }
 
-    /* --- HEADER --- */
+    /* HEADER */
     .header {
       background: #667eea;
       color: white;
       padding: 35px 50px;
-      width: 100%;
-      box-sizing: border-box;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
     }
 
     .header-content {
@@ -57,9 +56,7 @@
     .header-image {
       width: 200px;
       height: 200px;
-      flex-shrink: 0;
-      background: transparent;
-      border-radius: 8px;
+      border-radius: 10px;
       overflow: hidden;
     }
 
@@ -95,8 +92,8 @@
     .contact-item {
       background: white;
       border-radius: 6px;
-      transition: background 0.3s, border 0.3s;
       border: 2px solid transparent;
+      transition: all 0.3s;
     }
 
     .contact-item:hover {
@@ -125,19 +122,14 @@
       transition: color 0.3s;
     }
 
-    /* --- CONTENT --- */
-    .content {
-      padding: 50px;
-    }
-
+    /* INTRO */
     .intro {
       text-align: center;
-      padding: 40px 20px 20px 20px;
-      background: transparent;
+      padding: 50px 20px;
     }
 
     .intro p {
-      color: #666;
+      color: #555;
       font-size: 1.1em;
       font-weight: bold;
       line-height: 1.6;
@@ -145,101 +137,68 @@
       max-width: 900px;
     }
 
-    .section {
-      margin-bottom: 45px;
+    /* SECTION TITLES */
+    h2 {
+      color: #667eea;
+      font-weight: 900;
+      margin-bottom: 15px;
+      font-size: 1.8em;
+      border-bottom: 3px solid #667eea;
+      display: inline-block;
+      padding-bottom: 5px;
     }
 
-    .section-header {
-      display: flex;
-      align-items: center;
+    section {
+      margin-bottom: 60px;
+    }
+
+    /* CONTENT */
+    .content {
+      padding: 50px 20px;
+    }
+
+    .item {
       margin-bottom: 25px;
     }
 
-    .section h2 {
-      font-size: 1.75em;
+    .item h3 {
       font-weight: 800;
+      font-size: 1.3em;
       color: #1a1a1a;
     }
 
-    .job,
-    .education-item {
-      margin-bottom: 30px;
-      padding-left: 30px;
-      position: relative;
-    }
-
-    .job::before,
-    .education-item::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 8px;
-      width: 12px;
-      height: 12px;
-      background: #667eea;
-      border-radius: 50%;
-    }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
+    .item .sub {
+      font-style: italic;
+      color: #666;
       margin-bottom: 5px;
-      flex-wrap: wrap;
     }
 
-    .job h3,
-    .education-item h3 {
-      font-size: 1.4em;
-      color: #1a1a1a;
-      font-weight: 700;
-    }
-
-    .date {
+    .item .date {
       color: #999;
       font-size: 0.9em;
-      font-weight: 600;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .job-title,
-    .degree {
-      color: #666;
-      font-size: 1.05em;
       margin-bottom: 10px;
-      font-weight: 600;
     }
 
-    .job ul {
-      margin-top: 12px;
+    ul {
       margin-left: 20px;
     }
 
-    .job li {
-      margin-bottom: 10px;
+    li {
+      margin-bottom: 5px;
     }
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skill-tag {
-      background: #667eea;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 20px;
-      font-size: 0.9em;
-    }
-
+    /* CONTACT */
     .contact-banner {
       background: #667eea;
       color: white;
       text-align: center;
       padding: 50px 20px;
-      width: 100%;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
       box-sizing: border-box;
     }
 
@@ -253,6 +212,7 @@
       max-width: 1100px;
       margin: 0 auto;
       text-align: center;
+      background: white;
     }
 
     .contact-form form {
@@ -290,12 +250,7 @@
       background: #5a6ed8;
     }
 
-    /* --- RESPONSIVE --- */
     @media (max-width: 768px) {
-      .header {
-        padding: 30px 20px;
-      }
-
       .header-content {
         flex-direction: column;
         align-items: center;
@@ -308,14 +263,6 @@
         margin-bottom: 20px;
       }
 
-      .header-text {
-        text-align: center;
-      }
-
-      .header h1 {
-        font-size: 2.5em;
-      }
-
       .contact {
         justify-content: center;
       }
@@ -325,194 +272,134 @@
       }
 
       .intro {
-        padding: 30px 15px 15px 15px;
+        padding: 30px 15px;
       }
 
       .contact-form {
-        margin: 40px 15px;
         padding: 30px 20px;
       }
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="header-content">
-        <div class="header-image">
-          <img src="images/icon.svg" alt="Lillian Pulaski" height="250" width="250" />
-        </div>
-        <div class="header-text">
-          <h1>LILLIAN PULASKI</h1>
-          <hr />
-          <br />
-          <div class="location">
-            <i class="fas fa-map-marker-alt"></i> BOSTON, MA
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-content">
+      <div class="header-image">
+        <img src="images/icon.svg" alt="Lillian Pulaski" />
+      </div>
+      <div class="header-text">
+        <h1>LILLIAN PULASKI</h1>
+        <hr /><br />
+        <div class="location"><i class="fas fa-map-marker-alt"></i> Boston, MA</div>
+        <div class="contact" style="justify-content: flex-start">
+          <div class="contact-item">
+            <a href="https://www.linkedin.com/in/lillian-pulaski-b7491a246" target="_blank">
+              <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+            </a>
           </div>
-          <div class="contact" style="justify-content: flex-start">
-            <div class="contact-item">
-              <a href="https://www.linkedin.com/in/lillian-pulaski-b7491a246" target="_blank">
-                <i class="fab fa-linkedin"></i>
-                <span>LinkedIn</span>
-              </a>
-            </div>
-            <div class="contact-item">
-              <a href="https://github.com/lillian-pulaski" target="_blank">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-              </a>
-            </div>
-            <div class="contact-item">
-              <a href="portfolio.html">
-                <i class="fas fa-palette"></i>
-                <span>Graphic Design Portfolio</span>
-              </a>
-            </div>
-            <div class="contact-item">
-              <a href="technical.html">
-                <i class="fa-solid fa-code"></i>
-                <span>Technical Projects</span>
-              </a>
-            </div>
+          <div class="contact-item">
+            <a href="https://github.com/lillian-pulaski" target="_blank">
+              <i class="fab fa-github"></i><span>GitHub</span>
+            </a>
+          </div>
+          <div class="contact-item">
+            <a href="portfolio.html">
+              <i class="fas fa-palette"></i><span>Graphic Design Portfolio</span>
+            </a>
+          </div>
+          <div class="contact-item">
+            <a href="technical.html">
+              <i class="fa-solid fa-code"></i><span>Technical Projects</span>
+            </a>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- INTRO -->
-    <div class="intro">
-      <p>
-        Hello! I'm Lillian, a student at Binghamton University graduating in
-        Spring 2026. I'm majoring in Financial Economics with minors in Graphic
-        Design and Digital and Data Studies. My background allows me to merge
-        creative design thinking with analytical problem-solving — a perspective
-        I'm excited to bring into the world of finance. Thank you for visiting
-        my portfolio site!
-      </p>
-    </div>
+  <!-- INTRO -->
+  <div class="intro">
+    <p>
+      Hello! I’m Lillian Pulaski, a student at Binghamton University graduating in Spring 2026. I’m majoring in Financial Economics with minors in Graphic Design and Digital and Data Studies. My background allows me to merge creative design thinking with analytical problem-solving — a perspective I’m excited to bring into the field of finance. Thank you for visiting my portfolio site!
+    </p>
+  </div>
 
-    <div class="content">
-      <!-- EDUCATION -->
-      <div class="section">
-        <div class="section-header">
-          <h2>EDUCATION</h2>
-        </div>
-        <div class="education-item">
-          <h3>Binghamton University, State University of New York</h3>
-          <div class="degree" style="margin-bottom: 2px">
-            Bachelor of Science in Economics: Financial Analysis Specialization
-          </div>
-          <div class="degree">
-            Digital and Data Studies (DiDa) Minor | Graphic Design Minor
-          </div>
-          <span class="date">AUG 2022 - MAY 2026 | GPA: 3.67</span>
-          <ul style="margin-top: 10px; margin-left: 20px">
-            <li>
-              Involvement: Binghamton University Scholars (Honors) Program
-              Council, Italian Student Organization Executive Board
-            </li>
-          </ul>
-        </div>
+  <!-- MAIN CONTENT -->
+  <div class="container content">
+    <section id="education">
+      <h2>Education</h2>
+      <div class="item">
+        <h3>Binghamton University, State University of New York</h3>
+        <div class="sub">Bachelor of Arts in Financial Economics</div>
+        <div class="date">Expected Graduation: Spring 2026</div>
+        <ul>
+          <li>Minors: Graphic Design, Digital and Data Studies</li>
+          <li>Relevant Coursework: Econometrics, Financial Markets, Design & Visual Culture, Data Analysis with Python</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="item">
+        <h3>Research Assistant – Economics Department</h3>
+        <div class="sub">Binghamton University</div>
+        <div class="date">Fall 2024 – Present</div>
+        <ul>
+          <li>Conducted research on discrimination in labor markets and firm decision-making.</li>
+          <li>Analyzed labor data and summarized findings for publication preparation.</li>
+        </ul>
       </div>
 
-      <!-- EXPERIENCE -->
-      <div class="section">
-        <div class="section-header">
-          <h2>EXPERIENCE</h2>
-        </div>
-        <div class="job">
-          <div class="job-header">
-            <h3>State Street Corporation</h3>
-          </div>
-          <div class="job-title">Corporate Finance Intern – Corporate Tax</div>
-          <span class="date">JUN 2025 - AUG 2025 | Boston, MA</span>
-          <ul>
-            <li>Supported the Corporate Tax team in preparing and analyzing tax credit documentation for the 2024 tax year, focusing on Research and Development (R&D) tax credits and international partnership adjustments.</li>
-            <li>Assisted in developing a workflow in Alteryx to automate the process of creating the Other Comprehensive Income (OCI) file from tax extract data.</li>
-          </ul>
-        </div>
+      <div class="item">
+        <h3>Vice President of Member Relations</h3>
+        <div class="sub">Italian Student Organization, Binghamton University</div>
+        <div class="date">Fall 2023 – Present</div>
+        <ul>
+          <li>Lead member engagement initiatives and design promotional materials for cultural events.</li>
+          <li>Planned and hosted organization-wide events fostering community and cultural awareness.</li>
+        </ul>
+      </div>
+    </section>
 
-        <div class="job">
-          <div class="job-header">
-            <h3>My Brother's Table Soup Kitchen</h3>
-          </div>
-          <div class="job-title">Graphic Design Volunteer</div>
-          <span class="date">JAN 2020 - Present | Lynn, MA</span>
-          <ul>
-            <li>Created graphics, branded merchandise, and marketing materials using Adobe Illustrator to promote fundraising events and encourage donations to support My Brother's Table's mission of “nourishing our community every day through hospitality, free meals, and unconditional love.”</li>
-          </ul>
-        </div>
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Design Tools:</strong> Adobe Illustrator, Photoshop, InDesign</li>
+        <li><strong>Programming:</strong> Python, HTML, CSS</li>
+        <li><strong>Other:</strong> Microsoft Excel, Data Visualization, Research Analysis</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="item">
+        <h3>Resume and Portfolio Website</h3>
+        <div class="sub">In Progress</div>
+        <p>Designed and developed this custom website from scratch using HTML and CSS, hosted through a GitHub repository. The site serves as a comprehensive showcase of my design and technical projects.</p>
       </div>
 
-      <!-- TECHNICAL SKILLS -->
-      <div class="section">
-        <div class="section-header">
-          <h2>TECHNICAL SKILLS</h2>
-        </div>
-        <div class="skills">
-          <span class="skill-tag">Microsoft Excel</span>
-          <span class="skill-tag">Microsoft Access</span>
-          <span class="skill-tag">Alteryx</span>
-          <span class="skill-tag">SQLite</span>
-          <span class="skill-tag">Oracle Database</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">R Studio</span>
-          <span class="skill-tag">HTML/CSS</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">Adobe Illustrator</span>
-          <span class="skill-tag">Adobe Photoshop</span>
-        </div>
+      <div class="item">
+        <h3>Gun Mortality Analysis</h3>
+        <p>Developed a Python-based data analysis notebook exploring U.S. gun mortality statistics across demographics, using data visualization techniques to highlight patterns and disparities.</p>
       </div>
+    </section>
+  </div>
 
-      <!-- ORGANIZATIONS -->
-      <div class="section">
-        <div class="section-header">
-          <h2>ORGANIZATIONS</h2>
-        </div>
-        <div class="job">
-          <div class="job-header">
-            <h3>Binghamton University Scholars Program Council</h3>
-          </div>
-          <div class="job-title">Executive Vice President</div>
-          <span class="date">APR 2025 - MAY 2026</span>
-          <ul>
-            <li>Supported the Scholars Council by managing communications, coordinating event submissions, maintaining calendars and group chats, and assisting the President with larger-scale events as needed.</li>
-          </ul>
-        </div>
-        <div class="job" style="padding-left: 30px">
-          <div class="job-title">Vice President of Marketing</div>
-          <span class="date">AUG 2024 - APR 2025</span>
-          <ul>
-            <li>Managed social media platforms and oversaw the design and distribution of Scholars Program merchandise. Oversaw the Scholars Marketing Committee and collaborated with council members to effectively advertise events and announcements.</li>
-          </ul>
-        </div>
-        <div class="job">
-          <div class="job-header">
-            <h3>Binghamton University Italian Student Organization Executive Board</h3>
-          </div>
-          <div class="job-title">Social Media Representative</div>
-          <span class="date">AUG 2024 - MAY 2026</span>
-          <ul>
-            <li>Managed the club's social media accounts to promote upcoming and past events, increasing engagement among current members and attracting potential new members.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+  <!-- CONTACT -->
+  <div class="contact-banner">
+    <h2>Contact Me</h2>
+  </div>
 
-    <div class="contact-banner">
-      <h2>CONTACT ME</h2>
-    </div>
-
-    <div class="contact-form">
-      <form action="https://formspree.io/f/mdkwbakv" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="_replyto" placeholder="Your Email" required />
-        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
+  <div class="contact-form">
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </div>
 </body>
 </html>
-
