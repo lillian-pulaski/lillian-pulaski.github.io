@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technical Projects - Lillian Pulaski</title>
-    <link rel="icon" type="image/svg+xml" href="images/icon3.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -12,6 +11,8 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        html, body {overflow-x: hidden;}
 
         body {
             font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
@@ -48,18 +49,41 @@
             padding: 50px 20px;
         }
 
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .intro h2 {
+            font-size: 2em;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 25px;
             margin-bottom: 50px;
+            align-items: start;
+        }
+
+        .project:nth-child(even) {
+            margin-top: 40px;
         }
 
         .project {
             background: white;
             border-radius: 12px;
             padding: 25px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f0f0f0;
         }
 
         .project-header {
@@ -160,6 +184,67 @@
             object-fit: cover;
         }
 
+        .contact-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .contact-section h2 {
+            font-size: 2em;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .contact-section p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: #667eea;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid transparent;
+            transition: background 0.3s, border 0.3s, color 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #667eea;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .contact-btn i {
+            color: #667eea;
+            transition: color 0.3s;
+        }
+        
+        .contact-btn:hover i {
+            color: white;
+        }
+
+        .back-button-container {
+            text-align: center;
+            padding: 30px 0;
+        }
 
         .back-button {
             position: fixed;
@@ -186,12 +271,12 @@
             border: 2px solid #667eea;
             color: white;
         }
-
+        
         .back-button i {
             color: #667eea;
             transition: color 0.3s;
         }
-
+        
         .back-button:hover i {
             color: white;
         }
@@ -209,6 +294,10 @@
             .project {
                 padding: 20px;
             }
+
+            .contact-section {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
@@ -220,10 +309,11 @@
 
     <div class="container">
         <div class="projects-grid">
-
             <!-- Project 1 -->
             <div class="project">
-                <div class="project-image"></div>
+                <div class="project-image">
+                    <!-- <img src="images/gun_mortality.png" alt="Project 1 Screenshot"> -->
+                </div>
                 <div class="project-header">
                     <h3>Capstone Project: Open Source CMS Display</h3>
                     <h5>IN PROGRESS</h5>
@@ -244,16 +334,15 @@
                 </div>
             </div>
 
-            <!-- Project 2 -->
             <div class="project">
                 <div class="project-image">
-                    <img src="images/gun_mortality.png" alt="Gun-Related Mortality Analysis Screenshot">
+                    <img src="images/gun_mortality.png" alt="Project 1 Screenshot">
                 </div>
                 <div class="project-header">
                     <h3>Gun-Related Mortality Analysis</h3>
                     <h5>MAY 2025</h5>
                     <h5>OTHER CONTRIBUTORS: Gabriella Coleman, Melanie Nguyen, Renzo Guevarra</h5>
-                    <p>A comprehensive data analysis project examining gun-related deaths in the United States (2012–2014) to identify trends, at-risk populations, and inform policy recommendations for violence prevention.</p>
+                    <p>A comprehensive data analysis project examining gun-related deaths in the United States (2012-2014) to identify trends, at-risk populations, and inform policy recommendations for violence prevention.</p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">Pandas</span>
@@ -267,11 +356,10 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Project 3 -->
+            
             <div class="project">
                 <div class="project-image">
-                    <img src="images/cov19_voter_reg.png" alt="COVID-19 Voter Registration Screenshot">
+                    <img src="images/cov19_voter_reg.png" alt="Project 3 Screenshot">
                 </div>
                 <div class="project-header">
                     <h3>COVID-19 Pandemic Impact on New Voter Registration</h3>
@@ -289,16 +377,14 @@
                     </a>
                 </div>
             </div>
-
+        </div>
+        
+        <div class="back-button-container">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Resume
+            </a>
         </div>
     </div>
-
-
-    <a href="index.html" class="back-button">
-        <i class="fas fa-arrow-left"></i>
-        Back to Resume
-    </a>
-
 </body>
 </html>
-
