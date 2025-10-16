@@ -35,7 +35,7 @@
       background: white;
     }
 
-    /* --- FULL-WIDTH HEADER --- */
+    /* --- HEADER --- */
     .header {
       background: #667eea;
       color: white;
@@ -77,7 +77,6 @@
       font-size: 3.5em;
       font-weight: 900;
       margin-bottom: 5px;
-      font-family: "Helvetica Neue", "Helvetica", sans-serif;
       letter-spacing: -1px;
     }
 
@@ -160,20 +159,17 @@
       font-size: 1.75em;
       font-weight: 800;
       color: #1a1a1a;
-      font-family: "Helvetica Neue", "Helvetica", sans-serif;
     }
 
     .job,
-    .education-item,
-    .project {
+    .education-item {
       margin-bottom: 30px;
       padding-left: 30px;
       position: relative;
     }
 
     .job::before,
-    .education-item::before,
-    .project::before {
+    .education-item::before {
       content: "";
       position: absolute;
       left: 0;
@@ -193,12 +189,10 @@
     }
 
     .job h3,
-    .education-item h3,
-    .project h3 {
+    .education-item h3 {
       font-size: 1.4em;
       color: #1a1a1a;
       font-weight: 700;
-      font-family: "Helvetica Neue", "Helvetica", sans-serif;
     }
 
     .date {
@@ -217,14 +211,12 @@
       font-weight: 600;
     }
 
-    .job ul,
-    .project ul {
+    .job ul {
       margin-top: 12px;
       margin-left: 20px;
     }
 
-    .job li,
-    .project li {
+    .job li {
       margin-bottom: 10px;
     }
 
@@ -240,7 +232,61 @@
       padding: 8px 15px;
       border-radius: 20px;
       font-size: 0.9em;
-      transition: transform 0.3s, background 0.3s;
+    }
+
+    /* --- CONTACT FORM --- */
+    .contact-form {
+      background: #f9f9f9;
+      padding: 40px 30px;
+      border-radius: 10px;
+      margin: 60px auto;
+      max-width: 700px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-form h2 {
+      color: #1a1a1a;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px 15px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+      font-family: "Helvetica Neue", sans-serif;
+      transition: border 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .contact-form button {
+      background: #667eea;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #5565c1;
     }
 
     /* --- RESPONSIVE --- */
@@ -280,15 +326,10 @@
       .intro {
         padding: 30px 15px 15px 15px;
       }
-    }
 
-    @media print {
-      body {
-        background: white;
-        padding: 0;
-      }
-      .container {
-        box-shadow: none;
+      .contact-form {
+        margin: 40px 15px;
+        padding: 30px 20px;
       }
     }
   </style>
@@ -299,12 +340,7 @@
     <div class="header">
       <div class="header-content">
         <div class="header-image">
-          <img
-            src="images/icon.svg"
-            alt="Lillian Pulaski"
-            height="250"
-            width="250"
-          />
+          <img src="images/icon.svg" alt="Lillian Pulaski" height="250" width="250" />
         </div>
         <div class="header-text">
           <h1>LILLIAN PULASKI</h1>
@@ -315,10 +351,7 @@
           </div>
           <div class="contact" style="justify-content: flex-start">
             <div class="contact-item">
-              <a
-                href="https://www.linkedin.com/in/lillian-pulaski-b7491a246"
-                target="_blank"
-              >
+              <a href="https://www.linkedin.com/in/lillian-pulaski-b7491a246" target="_blank">
                 <i class="fab fa-linkedin"></i>
                 <span>LinkedIn</span>
               </a>
@@ -347,7 +380,7 @@
     </div>
 
     <!-- INTRO -->
-    <div class="intro" aria-labelledby="intro-heading">
+    <div class="intro">
       <p>
         Hello! I'm Lillian, a student at Binghamton University graduating in
         Spring 2026. I'm majoring in Financial Economics with minors in Graphic
@@ -364,7 +397,6 @@
         <div class="section-header">
           <h2>EDUCATION</h2>
         </div>
-
         <div class="education-item">
           <h3>Binghamton University, State University of New York</h3>
           <div class="degree" style="margin-bottom: 2px">
@@ -388,7 +420,6 @@
         <div class="section-header">
           <h2>EXPERIENCE</h2>
         </div>
-
         <div class="job">
           <div class="job-header">
             <h3>State Street Corporation</h3>
@@ -396,17 +427,8 @@
           <div class="job-title">Corporate Finance Intern – Corporate Tax</div>
           <span class="date">JUN 2025 - AUG 2025 | Boston, MA</span>
           <ul>
-            <li>
-              Supported the Corporate Tax team in preparing and analyzing tax
-              credit documentation for the 2024 tax year, focusing on Research
-              and Development (R&D) tax credits and international partnership
-              adjustments.
-            </li>
-            <li>
-              Assisted in developing a workflow in Alteryx to automate the
-              process of creating the Other Comprehensive Income (OCI) file from
-              tax extract data.
-            </li>
+            <li>Supported the Corporate Tax team in preparing and analyzing tax credit documentation for the 2024 tax year, focusing on Research and Development (R&D) tax credits and international partnership adjustments.</li>
+            <li>Assisted in developing a workflow in Alteryx to automate the process of creating the Other Comprehensive Income (OCI) file from tax extract data.</li>
           </ul>
         </div>
 
@@ -417,13 +439,7 @@
           <div class="job-title">Graphic Design Volunteer</div>
           <span class="date">JAN 2020 - Present | Lynn, MA</span>
           <ul>
-            <li>
-              Created graphics, branded merchandise, and marketing materials
-              using Adobe Illustrator to promote fundraising events and
-              encourage donations to support My Brother's Table's mission of
-              "nourishing our community every day through hospitality, free
-              meals, and unconditional love."
-            </li>
+            <li>Created graphics, branded merchandise, and marketing materials using Adobe Illustrator to promote fundraising events and encourage donations to support My Brother's Table's mission of “nourishing our community every day through hospitality, free meals, and unconditional love.”</li>
           </ul>
         </div>
       </div>
@@ -453,7 +469,6 @@
         <div class="section-header">
           <h2>ORGANIZATIONS</h2>
         </div>
-
         <div class="job">
           <div class="job-header">
             <h3>Binghamton University Scholars Program Council</h3>
@@ -461,46 +476,40 @@
           <div class="job-title">Executive Vice President</div>
           <span class="date">APR 2025 - MAY 2026</span>
           <ul>
-            <li>
-              Supported the Scholars Council by managing communications,
-              coordinating event submissions, maintaining calendars and group
-              chats, and assisting the President with larger scale events as
-              needed.
-            </li>
+            <li>Supported the Scholars Council by managing communications, coordinating event submissions, maintaining calendars and group chats, and assisting the President with larger-scale events as needed.</li>
           </ul>
         </div>
-
         <div class="job" style="padding-left: 30px">
           <div class="job-title">Vice President of Marketing</div>
           <span class="date">AUG 2024 - APR 2025</span>
           <ul>
-            <li>
-              Managed social media platforms and oversaw the design and
-              distribution of Scholars Program merchandise. Oversaw the Scholars
-              Marketing Committee and collaborated with council members to
-              effectively advertise events and announcements.
-            </li>
+            <li>Managed social media platforms and oversaw the design and distribution of Scholars Program merchandise. Oversaw the Scholars Marketing Committee and collaborated with council members to effectively advertise events and announcements.</li>
           </ul>
         </div>
-
         <div class="job">
           <div class="job-header">
-            <h3>
-              Binghamton University Italian Student Organization Executive Board
-            </h3>
+            <h3>Binghamton University Italian Student Organization Executive Board</h3>
           </div>
           <div class="job-title">Social Media Representative</div>
           <span class="date">AUG 2024 - MAY 2026</span>
           <ul>
-            <li>
-              Managed the club's social media accounts to promote upcoming and
-              past events, increasing engagement among current members and
-              attracting potential new members.
-            </li>
+            <li>Managed the club's social media accounts to promote upcoming and past events, increasing engagement among current members and attracting potential new members.</li>
           </ul>
         </div>
       </div>
     </div>
+
+    <!-- CONTACT FORM -->
+    <div class="contact-form" id="contact">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/mdkwbakv" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="_replyto" placeholder="Your Email" required />
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
   </div>
 </body>
 </html>
+
