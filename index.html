@@ -234,25 +234,28 @@
       font-size: 0.9em;
     }
 
-    .contact-form {
+    .contact-banner {
       background: #667eea;
       color: white;
-      padding: 60px 50px;
+      text-align: center;
+      padding: 50px 20px;
       width: 100%;
       box-sizing: border-box;
-      text-align: center;
-      margin-top: 60px;
     }
 
-    .contact-form h2 {
+    .contact-banner h2 {
       font-weight: 900;
-      margin-bottom: 25px;
       font-size: 2em;
     }
 
-    .contact-form form {
+    .contact-form {
+      padding: 50px;
       max-width: 1100px;
       margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-form form {
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -260,29 +263,18 @@
 
     .contact-form input,
     .contact-form textarea {
+      width: 100%;
       padding: 12px 15px;
-      border: 2px solid white;
+      border: 2px solid #ccc;
       border-radius: 8px;
       font-size: 1em;
       font-family: "Helvetica Neue", sans-serif;
-      background: white;
       color: #1a1a1a;
     }
 
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
-      color: #666;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      border-color: #ffffff;
-    }
-
     .contact-form button {
-      background: white;
-      color: #667eea;
+      background: #667eea;
+      color: white;
       padding: 12px;
       border: none;
       border-radius: 8px;
@@ -290,10 +282,12 @@
       font-size: 1.05em;
       cursor: pointer;
       transition: all 0.3s ease;
+      width: 200px;
+      margin: 0 auto;
     }
 
     .contact-form button:hover {
-      background: #f1f1f1;
+      background: #5a6ed8;
     }
 
     /* --- RESPONSIVE --- */
@@ -506,9 +500,11 @@
       </div>
     </div>
 
-    <!-- CONTACT FORM -->
-    <div class="contact-form" id="contact">
-      <h2>Contact Me</h2>
+    <div class="contact-banner">
+      <h2>CONTACT ME</h2>
+    </div>
+
+    <div class="contact-form">
       <form action="https://formspree.io/f/mdkwbakv" method="POST">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="_replyto" placeholder="Your Email" required />
