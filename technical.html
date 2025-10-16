@@ -49,30 +49,11 @@
             padding: 50px 20px;
         }
 
-        .intro {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .intro h2 {
-            font-size: 2em;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-        }
-
-        .intro p {
-            font-size: 1.1em;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 25px;
             margin-bottom: 50px;
-            align-items: start;
         }
 
         .project {
@@ -80,6 +61,7 @@
             border-radius: 12px;
             padding: 25px;
             border: 1px solid #f0f0f0;
+            break-inside: avoid;
         }
 
         .project-header {
@@ -180,63 +162,6 @@
             object-fit: cover;
         }
 
-        .contact-section {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .contact-section h2 {
-            font-size: 2em;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-        }
-
-        .contact-section p {
-            color: #666;
-            margin-bottom: 25px;
-            font-size: 1.1em;
-        }
-
-        .contact-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: white;
-            color: #667eea;
-            padding: 12px 25px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            border: 2px solid transparent;
-            transition: background 0.3s, border 0.3s, color 0.3s;
-        }
-
-        .contact-btn:hover {
-            background: #667eea;
-            border: 2px solid white;
-            color: white;
-        }
-        
-        .contact-btn i {
-            color: #667eea;
-            transition: color 0.3s;
-        }
-        
-        .contact-btn:hover i {
-            color: white;
-        }
-
         .back-button-container {
             text-align: center;
             padding: 30px 0;
@@ -263,7 +188,7 @@
 
         .back-button:hover {
             background: #667eea;
-            border: 2px solid #667eea;
+            border: 1px solid #667eea;
             color: white;
         }
         
@@ -289,10 +214,6 @@
             .project {
                 padding: 20px;
             }
-
-            .contact-section {
-                padding: 30px 20px;
-            }
         }
     </style>
 </head>
@@ -303,96 +224,8 @@
     </div>
 
     <div class="container">
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project">
-                <div class="project-image">
-                    <!-- <img src="images/gun_mortality.png" alt="Project 1 Screenshot"> -->
-                </div>
-                <div class="project-header">
-                    <h3>Capstone Project: Open Source CMS Display</h3>
-                    <h5>IN PROGRESS</h5>
-                    <h5>OTHER CONTRIBUTORS: Taylor Veneto, Kaymora Roberts, Aliana Slaven</h5>
-                    <p>Developed a web-based content management system for Raspberry Pi slideshow displays, enabling users to create and manage digital signage content. Implemented user authentication with role-based access control (admin and content editor roles), image upload functionality, and HDMI CEC integration for automated TV scheduling. Built custom Python scraping capabilities for dynamic content (weather, date/time) and support for custom HTML slides.</p>
-                    <div class="project-tags">
-                        <span class="tag">Web Development</span>
-                        <span class="tag">Django</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">HTML/CSS</span>
-                    </div>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/tveneto1/dida425cmsproject" class="project-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                        View Repository
-                    </a>
-                </div>
-            </div>
-
-            <div class="project">
-                <div class="project-image">
-                    <img src="images/gun_mortality.png" alt="Project 1 Screenshot">
-                </div>
-                <div class="project-header">
-                    <h3>Gun-Related Mortality Analysis</h3>
-                    <h5>MAY 2025</h5>
-                    <h5>OTHER CONTRIBUTORS: Gabriella Coleman, Melanie Nguyen, Renzo Guevarra</h5>
-                    <p>A comprehensive data analysis project examining gun-related deaths in the United States (2012-2014) to identify trends, at-risk populations, and inform policy recommendations for violence prevention.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Pandas</span>
-                        <span class="tag">Regression Analysis</span>
-                    </div>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/lillian-pulaski/gun-related_mortality_and_prevention" class="project-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                        View Repository
-                    </a>
-                </div>
-            </div>
-            
-            <div class="project">
-                <div class="project-image">
-                    <img src="images/cov19_voter_reg.png" alt="Project 3 Screenshot">
-                </div>
-                <div class="project-header">
-                    <h3>COVID-19 Pandemic Impact on New Voter Registration</h3>
-                    <h5>MARCH 2025</h5>
-                    <p>This project looks at how the COVID-19 pandemic in 2020 affected new voter registration compared to 2016. The goal is to understand how crises impact voter participation and how registration rates can be maintained during difficult times.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Pandas</span>
-                    </div>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/lillian-pulaski/voter_registration_covid-19_impact/tree/main" class="project-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                        View Repository
-                    </a>
-                </div>
-            </div>
-
-            <div class="project">
-                <div class="project-image">
-                    <img src="images/website_ss.png" alt="Project 4 Screenshot">
-                </div>
-                <div class="project-header">
-                    <h3>Resume and Portfolio Website</h3>
-                    <h5>IN PROGRESS</h5>
-                    <p>Designed and developed this custom website from scratch using HTML and CSS, hosted through a GitHub repository. The site serves as a comprehensive showcase of my design and technical projects.</p>
-                    <div class="project-tags">
-                        <span class="tag">Web Design</span>
-                        <span class="tag">HTML/CSS</span>
-                    </div>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/lillian-pulaski/lillian-pulaski.github.io/" class="project-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                        View Repository
-                    </a>
-                </div>
-            </div>
+        <div class="projects-grid" id="masonry-grid">
+            <!-- Projects will be inserted here by JavaScript -->
         </div>
         
         <div class="back-button-container">
@@ -402,5 +235,98 @@
             </a>
         </div>
     </div>
+
+    <script>
+        const projects = [
+            {
+                image: null,
+                title: "Capstone Project: Open Source CMS Display",
+                status: "IN PROGRESS",
+                contributors: "OTHER CONTRIBUTORS: Taylor Veneto, Kaymora Roberts, Aliana Slaven",
+                description: "Developed a web-based content management system for Raspberry Pi slideshow displays, enabling users to create and manage digital signage content. Implemented user authentication with role-based access control (admin and content editor roles), image upload functionality, and HDMI CEC integration for automated TV scheduling. Built custom Python scraping capabilities for dynamic content (weather, date/time) and support for custom HTML slides.",
+                tags: ["Web Development", "Django", "Python", "HTML/CSS"],
+                link: "https://github.com/tveneto1/dida425cmsproject"
+            },
+            {
+                image: "images/gun_mortality.png",
+                title: "Gun-Related Mortality Analysis",
+                status: "MAY 2025",
+                contributors: "OTHER CONTRIBUTORS: Gabriella Coleman, Melanie Nguyen, Renzo Guevarra",
+                description: "A comprehensive data analysis project examining gun-related deaths in the United States (2012-2014) to identify trends, at-risk populations, and inform policy recommendations for violence prevention.",
+                tags: ["Python", "Pandas", "Regression Analysis"],
+                link: "https://github.com/lillian-pulaski/gun-related_mortality_and_prevention"
+            },
+            {
+                image: "images/cov19_voter_reg.png",
+                title: "COVID-19 Pandemic Impact on New Voter Registration",
+                status: "MARCH 2025",
+                contributors: null,
+                description: "This project looks at how the COVID-19 pandemic in 2020 affected new voter registration compared to 2016. The goal is to understand how crises impact voter participation and how registration rates can be maintained during difficult times.",
+                tags: ["Python", "Pandas"],
+                link: "https://github.com/lillian-pulaski/voter_registration_covid-19_impact/tree/main"
+            },
+            {
+                image: "images/website_ss.png",
+                title: "Resume and Portfolio Website",
+                status: "IN PROGRESS",
+                contributors: null,
+                description: "Designed and developed this custom website from scratch using HTML and CSS, hosted through a GitHub repository. The site serves as a comprehensive showcase of my design and technical projects.",
+                tags: ["Web Design", "HTML/CSS"],
+                link: "https://github.com/lillian-pulaski/lillian-pulaski.github.io/"
+            }
+        ];
+
+        function createProjectCard(project) {
+            return `
+                <div class="project">
+                    ${project.image ? `
+                        <div class="project-image">
+                            <img src="${project.image}" alt="${project.title} Screenshot">
+                        </div>
+                    ` : `
+                        <div class="project-image"></div>
+                    `}
+                    <div class="project-header">
+                        <h3>${project.title}</h3>
+                        <h5>${project.status}</h5>
+                        ${project.contributors ? `<h5>${project.contributors}</h5>` : ''}
+                        <p>${project.description}</p>
+                        <div class="project-tags">
+                            ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="${project.link}" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                            View Repository
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        function initMasonryLayout() {
+            const grid = document.getElementById('masonry-grid');
+            const columns = [[], []]; // Two columns
+            
+            projects.forEach((project, index) => {
+                const columnIndex = index % 2;
+                columns[columnIndex].push(createProjectCard(project));
+            });
+
+            // Create column containers
+            grid.innerHTML = `
+                <div style="display: flex; flex-direction: column; gap: 25px;">
+                    ${columns[0].join('')}
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 25px;">
+                    ${columns[1].join('')}
+                </div>
+            `;
+        }
+
+        // Initialize on page load
+        window.addEventListener('load', initMasonryLayout);
+    </script>
 </body>
 </html>
