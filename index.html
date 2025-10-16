@@ -40,7 +40,12 @@
       background: #667eea;
       color: white;
       padding: 35px 50px;
-      width: 100%;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
       box-sizing: border-box;
     }
 
@@ -131,18 +136,27 @@
     }
 
     .intro {
-      text-align: center;
-      padding: 40px 20px 20px 20px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
+      align-items: center;
+      padding: 50px;
       background: transparent;
+    }
+
+    .intro-label {
+      color: #667eea;
+      font-size: 1.5em;
+      font-weight: 900;
+      text-align: right;
+      padding-right: 30px;
+      border-right: 3px solid #667eea;
     }
 
     .intro p {
       color: #666;
       font-size: 1.1em;
-      font-weight: bold;
-      line-height: 1.6;
-      margin: 0 auto;
-      max-width: 900px;
+      line-height: 1.7;
     }
 
     .section {
@@ -239,7 +253,12 @@
       color: white;
       text-align: center;
       padding: 50px 20px;
-      width: 100%;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
       box-sizing: border-box;
     }
 
@@ -325,11 +344,24 @@
       }
 
       .intro {
-        padding: 30px 15px 15px 15px;
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+      }
+
+      .intro-label {
+        text-align: center;
+        border-right: none;
+        border-bottom: 3px solid #667eea;
+        padding-right: 0;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+      }
+
+      .intro p {
+        text-align: left;
       }
 
       .contact-form {
-        margin: 40px 15px;
         padding: 30px 20px;
       }
     }
@@ -382,6 +414,7 @@
 
     <!-- INTRO -->
     <div class="intro">
+      <div class="intro-label">ABOUT ME</div>
       <p>
         Hello! I'm Lillian, a student at Binghamton University graduating in
         Spring 2026. I'm majoring in Financial Economics with minors in Graphic
@@ -440,7 +473,7 @@
           <div class="job-title">Graphic Design Volunteer</div>
           <span class="date">JAN 2020 - Present | Lynn, MA</span>
           <ul>
-            <li>Created graphics, branded merchandise, and marketing materials using Adobe Illustrator to promote fundraising events and encourage donations to support My Brother's Table's mission of “nourishing our community every day through hospitality, free meals, and unconditional love.”</li>
+            <li>Created graphics, branded merchandise, and marketing materials using Adobe Illustrator to promote fundraising events and encourage donations to support My Brother's Table's mission of "nourishing our community every day through hospitality, free meals, and unconditional love."</li>
           </ul>
         </div>
       </div>
