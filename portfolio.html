@@ -1,355 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graphic Design Portfolio - Lillian Pulaski</title>
-    <link rel="icon" type="image/svg+xml" href="images/icon3.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphic Design Portfolio - Lillian Pulaski</title>
+  <link rel="icon" type="image/svg+xml" href="images/icon3.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: #f8f9fa;
-            zoom: 75%;
-        }
+    body {
+      font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #f8f9fa;
+      zoom: 75%;
+    }
 
-        .header {
-            background: #667eea;
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-            margin-left: calc(-50vw / 0.75 + 50%);
-            margin-right: calc(-50vw / 0.75 + 50%);
-        }
+    .header {
+      background: #667eea;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      margin-left: calc(-50vw / 0.75 + 50%);
+      margin-right: calc(-50vw / 0.75 + 50%);
+    }
 
-        .header h1 {
-            font-size: 3em;
-            font-weight: 900;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-        }
+    .header h1 {
+      font-size: 3em;
+      font-weight: 900;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
 
-        .header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
+    .header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 50px 20px;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin-bottom: 50px;
-        }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-bottom: 50px;
+    }
 
-        .project {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            border: 1px solid #f0f0f0;
-        }
+    .project {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      border: 1px solid #f0f0f0;
+    }
 
-        .project-header {
-            margin-bottom: 15px;
-        }
+    /* Full-width (horizontal) layout for select projects */
+    .project.full-width {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+    }
 
-        .project-header h3 {
-            font-size: 1.5em;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
+    .project.full-width .project-header {
+      flex: 1;
+    }
 
-        .project-header p {
-            color: #666;
-            font-size: 0.95em;
-            line-height: 1.6;
-            margin-bottom: 12px;
-        }
+    .project.full-width .project-gallery {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 15px;
-        }
+    .project.full-width .project-gallery .project-image {
+      flex: 1;
+      border-radius: 8px;
+      overflow: hidden;
+    }
 
-        .tag {
-            background: #667eea;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.8em;
-            font-weight: 600;
-        }
+    /* Prevent forced cropping for GIFs */
+    .project.full-width .project-gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
 
-        .project-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
+    .project-header {
+      margin-bottom: 15px;
+    }
 
-        .project-gallery.single {
-            grid-template-columns: 1fr;
-        }
+    .project-header h3 {
+      font-size: 1.5em;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
 
-        .project-gallery.single .project-image:nth-child(2) {
-            margin-top: 10px;
-        }
+    .project-header h5 {
+      font-size: 0.9em;
+      color: #777;
+      margin-bottom: 10px;
+    }
 
-        .project-gallery.stacked {
-            grid-template-columns: 1fr;
-        }
+    .project-header p {
+      color: #666;
+      font-size: 0.95em;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
 
-        .project-gallery.stacked .project-image {
-            aspect-ratio: 16/9;
-        }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 15px;
+    }
 
-        .project-image {
-            width: 100%;
-            aspect-ratio: auto;
-            min-height: 200px;
-            background: transparent;
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 2em;
-        }
+    .tag {
+      background: #667eea;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.8em;
+      font-weight: 600;
+    }
 
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
 
-        .back-button-container {
-            text-align: center;
-            padding: 30px 0;
-        }
+    .project-gallery.single {
+      grid-template-columns: 1fr;
+    }
 
-        .back-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: white;
-            color: #667eea;
-            padding: 12px 30px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-            border: 1px solid #f0f0f0;
-            transition: background 0.3s, border 0.3s, color 0.3s;
-            z-index: 9999;
-        }
+    .project-gallery.single .project-image:nth-child(2) {
+      margin-top: 10px;
+    }
 
-        .back-button:hover {
-            background: #667eea;
-            border: 1px solid #667eea;
-            color: white;
-        }
-        
-        .back-button i {
-            color: #667eea;
-            transition: color 0.3s;
-        }
-        
-        .back-button:hover i {
-            color: white;
-        }
+    .project-gallery.stacked {
+      grid-template-columns: 1fr;
+    }
 
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2em;
-            }
+    .project-image {
+      width: 100%;
+      background: transparent;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 2em;
+    }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
 
-            .project {
-                padding: 20px;
-            }
+    .back-button-container {
+      text-align: center;
+      padding: 30px 0;
+    }
 
-            .project-gallery {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      color: #667eea;
+      padding: 12px 30px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1em;
+      border: 1px solid #f0f0f0;
+      transition: background 0.3s, border 0.3s, color 0.3s;
+      z-index: 9999;
+    }
+
+    .back-button:hover {
+      background: #667eea;
+      border: 1px solid #667eea;
+      color: white;
+    }
+
+    .back-button i {
+      color: #667eea;
+      transition: color 0.3s;
+    }
+
+    .back-button:hover i {
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project.full-width {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <h1>GRAPHIC DESIGN PORTFOLIO</h1>
-        <p>Lillian Pulaski</p>
-    </div>
-    
-    <div class="container">
-        <div class="projects-grid">
-            <!-- Project 1 - CD Jewel Case -->
-            <div class="project">
-                <div class="project-header">
-                    <h3>CD Jewel Case Design</h3>
-                    <h5>MARCH 2025</h5>
-                    <p>Redesign of Radiohead's "OK Computer" album including a physical prototype and foldable poster</p>
-                    <div class="project-tags">
-                        <span class="tag">Adobe Illustrator</span>
-                        <span class="tag">UV Printing</span>
-                    </div>
-                </div>
-                <div class="project-gallery">
-                    <div class="project-image">
-                        <img src="images/okcd_cover.jpg" alt="OK Computer Cover">
-                    </div>
-                    <div class="project-image">
-                        <img src="images/okcd_back.jpg" alt="OK Computer Back">
-                    </div>
-                </div>
-                <div class="project-gallery single">
-                    <div class="project-image">
-                        <img src="images/okcd_inside.jpg" alt="OK Computer Inside">
-                    </div>
-                    <div class="project-image">
-                        <img src="images/okcd_poster.png" alt="OK Computer Poster">
-                    </div>
-                </div>
-            </div>
+  <div class="header">
+    <h1>GRAPHIC DESIGN PORTFOLIO</h1>
+    <p>Lillian Pulaski</p>
+  </div>
 
-            <!-- Project 2 - Kinetic Typography -->
-            <div class="project">
-                <div class="project-header">
-                    <h3>Kinetic Typography</h3>
-                    <h5>OCTOBER 2025</h5>
-                    <p>An exploration of how motion design can reinforce meaning through the transformation of uppercase to lowercase letterforms using two opposing concepts. Animated two contrasting words to demonstrate how movement amplifies typography while working within a five-frame constraint.</p>
-                    <div class="project-tags">
-                        <span class="tag">Adobe Illustrator</span>
-                        <span class="tag">Adobe Photoshop</span>
-                    </div>
-                </div>
+  <div class="container">
+    <div class="projects-grid">
 
-                <div class="project-gallery stacked">
-                    <div class="project-image">
-                        <img src="images/300_P2_Pulaski_Word1_Rigid.gif" alt="Rigid GIF">
-                    </div>
-                    <div class="project-image">
-                        <img src="images/300_P2_Pulaski_Word2_Fluid.gif" alt="Fluid GIF">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3 - White Mountains Poster -->
-            <div class="project">
-                <div class="project-header">
-                    <h3>White Mountains Travel Poster</h3>
-                    <h5>FEBRUARY 2025</h5>
-                    <p>Vintage-inspired travel poster showcasing the natural beauty of New Hampshire's White Mountains.</p>
-                    <div class="project-tags">
-                        <span class="tag">Adobe Illustrator</span>
-                        <span class="tag">Adobe Photoshop</span>
-                    </div>
-                </div>
-                <div class="project-gallery single">
-                    <div class="project-image">
-                        <img src="images/nhwm_poster.png" alt="White Mountains Poster">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4 - South Park Poster -->
-            <div class="project">
-                <div class="project-header">
-                    <h3>South Park Poster</h3>
-                    <h5>APRIL 2025</h5>
-                    <p>Satirical advertisement poster based on the South Park episode "Christmas Snow," poking fun at the legalization of recreational drugs and misleading marketing tactics</p>
-                    <div class="project-tags">
-                        <span class="tag">Adobe Illustrator</span>
-                    </div>
-                </div>
-                <div class="project-gallery single">
-                    <div class="project-image">
-                        <img src="images/sp_poster.png" alt="South Park Poster">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 5 - Techno-Tax Logo -->
-            <div class="project">
-                <div class="project-header">
-                    <h3>Techno-Tax Logo</h3>
-                    <h5>JULY 2025</h5>
-                    <p>Company logo designed for a local tax business.</p>
-                    <div class="project-tags">
-                        <span class="tag">Adobe Illustrator</span>
-                    </div>
-                </div>
-                <div class="project-gallery stacked">
-                    <div class="project-image">
-                        <img src="images/technotax_logo-BW.png" alt="Techno Tax BW Logo">
-                    </div>
-                    <div class="project-image">
-                        <img src="images/technotax_logo-CO.png" alt="Techno Tax Color Logo">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 6 - Panel Composition -->
-            <div class="project">
-                <div class="project-header">
-                    <h3>Panel Composition</h3>
-                    <h5>NOVEMBER 2024</h5>
-                    <p>Multi-panel composition portraying my life story using only 3 hues and 2 typefaces. Showing my experience of being raised Catholic, being the middle child, and mindsets I was taught.</p>
-                    <div class="project-tags">
-                        <span class="tag">Adobe Illustrator</span>
-                    </div>
-                </div>
-                <div class="project-gallery">
-                    <div class="project-image">
-                        <img src="images/lss-p1.png" alt="Panel 1">
-                    </div>
-                    <div class="project-image">
-                        <img src="images/lss-p2.png" alt="Panel 2">
-                    </div>
-                    <div class="project-image">
-                        <img src="images/lss-p5.png" alt="Panel 5">
-                    </div>
-                    <div class="project-image">
-                        <img src="images/lss-p6.png" alt="Panel 6">
-                    </div>
-                    <div class="project-image">
-                        <img src="images/lss-p8.png" alt="Panel 8">
-                    </div>
-                    <div class="project-image">
-                        <img src="images/lss-p9.png" alt="Panel 9">
-                    </div>
-                </div>
-            </div>
+      <!-- Project 1 - CD Jewel Case -->
+      <div class="project">
+        <div class="project-header">
+          <h3>CD Jewel Case Design</h3>
+          <h5>MARCH 2025</h5>
+          <p>Redesign of Radiohead's "OK Computer" album including a physical prototype and foldable poster.</p>
+          <div class="project-tags">
+            <span class="tag">Adobe Illustrator</span>
+            <span class="tag">UV Printing</span>
+          </div>
         </div>
-
-        <div class="back-button-container">
-            <a href="index.html" class="back-button">
-                <i class="fas fa-arrow-left"></i>
-                Back to Resume
-            </a>
+        <div class="project-gallery">
+          <div class="project-image">
+            <img src="images/okcd_cover.jpg" alt="OK Computer Cover">
+          </div>
+          <div class="project-image">
+            <img src="images/okcd_back.jpg" alt="OK Computer Back">
+          </div>
         </div>
+        <div class="project-gallery single">
+          <div class="project-image">
+            <img src="images/okcd_inside.jpg" alt="OK Computer Inside">
+          </div>
+          <div class="project-image">
+            <img src="images/okcd_poster.png" alt="OK Computer Poster">
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 - Kinetic Typography -->
+      <div class="project full-width">
+        <div class="project-header">
+          <h3>Kinetic Typography</h3>
+          <h5>OCTOBER 2025</h5>
+          <p>An exploration of how motion design can reinforce meaning through the transformation of uppercase to lowercase letterforms using two opposing concepts. Animated two contrasting words to demonstrate how movement amplifies typography while working within a five-frame constraint.</p>
+          <div class="project-tags">
+            <span class="tag">Adobe Illustrator</span>
+            <span class="tag">Adobe Photoshop</span>
+          </div>
+        </div>
+        <div class="project-gallery">
+          <div class="project-image">
+            <img src="images/300_P2_Pulaski_Word1_Rigid.gif" alt="Rigid GIF">
+          </div>
+          <div class="project-image">
+            <img src="images/300_P2_Pulaski_Word2_Fluid.gif" alt="Fluid GIF">
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 - White Mountains Poster -->
+      <div class="project">
+        <div class="project-header">
+          <h3>White Mountains Travel Poster</h3>
+          <h5>FEBRUARY 2025</h5>
+          <p>Vintage-inspired travel poster showcasing the natural beauty of New Hampshire's White Mountains.</p>
+          <div class="project-tags">
+            <span class="tag">Adobe Illustrator</span>
+            <span class="tag">Adobe Photoshop</span>
+          </div>
+        </div>
+        <div class="project-gallery single">
+          <div class="project-image">
+            <img src="images/nhwm_poster.png" alt="White Mountains Poster">
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 - South Park Poster -->
+      <div class="project">
+        <div class="project-header">
+          <h3>South Park Poster</h3>
+          <h5>APRIL 2025</h5>
+          <p>Satirical advertisement poster based on the South Park episode "Christmas Snow," poking fun at the legalization of recreational drugs and misleading marketing tactics.</p>
+          <div class="project-tags">
+            <span class="tag">Adobe Illustrator</span>
+          </div>
+        </div>
+        <div class="project-gallery single">
+          <div class="project-image">
+            <img src="images/sp_poster.png" alt="South Park Poster">
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 - Techno-Tax Logo -->
+      <div class="project full-width">
+        <div class="project-header">
+          <h3>Techno-Tax Logo</h3>
+          <h5>JULY 2025</h5>
+          <p>Company logo designed for a local tax business.</p>
+          <div class="project-tags">
+            <span class="tag">Adobe Illustrator</span>
+          </div>
+        </div>
+        <div class="project-gallery">
+          <div class="project-image">
+            <img src="images/technotax_logo-BW.png" alt="Techno Tax BW Logo">
+          </div>
+          <div class="project-image">
+            <img src="images/technotax_logo-CO.png" alt="Techno Tax Color Logo">
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 - Panel Composition -->
+      <div class="project">
+        <div class="project-header">
+          <h3>Panel Composition</h3>
+          <h5>NOVEMBER 2024</h5>
+          <p>Multi-panel composition portraying my life story using only 3 hues and 2 typefaces. Showing my experience of being raised Catholic, being the middle child, and mindsets I was taught.</p>
+          <div class="project-tags">
+            <span class="tag">Adobe Illustrator</span>
+          </div>
+        </div>
+        <div class="project-gallery">
+          <div class="project-image">
+            <img src="images/lss-p1.png" alt="Panel 1">
+          </div>
+          <div class="project-image">
+            <img src="images/lss-p2.png" alt="Panel 2">
+          </div>
+          <div class="project-image">
+            <img src="images/lss-p5.png" alt="Panel 5">
+          </div>
+          <div class="project-image">
+            <img src="images/lss-p6.png" alt="Panel 6">
+          </div>
+          <div class="project-image">
+            <img src="images/lss-p8.png" alt="Panel 8">
+          </div>
+          <div class="project-image">
+            <img src="images/lss-p9.png" alt="Panel 9">
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="back-button-container">
+      <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        Back to Resume
+      </a>
+    </div>
+  </div>
 </body>
 </html>
