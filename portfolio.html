@@ -106,8 +106,16 @@
             grid-template-columns: 1fr;
         }
 
+        .project-gallery.single .project-image:nth-child(2) {
+            margin-top: 10px;
+        }
+
         .project-gallery.stacked {
             grid-template-columns: 1fr;
+        }
+
+        .project-gallery.stacked .project-image {
+            aspect-ratio: 16/9;
         }
 
         .project-image {
@@ -145,19 +153,18 @@
             background: white;
             color: #667eea;
             padding: 12px 30px;
-            border-radius: 6px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1em;
-            border: 2px solid transparent;
+            border: 1px solid #f0f0f0;
             transition: background 0.3s, border 0.3s, color 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
             z-index: 9999;
         }
 
         .back-button:hover {
             background: #667eea;
-            border: 2px solid #667eea;
+            border: 1px solid #667eea;
             color: white;
         }
         
