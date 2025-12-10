@@ -265,12 +265,12 @@
         const projects = [
             {
                 images: [
-                    { src: null, caption: "Login interface with role-based authentication" },
-                    { src: null, caption: "Content management dashboard" },
-                    { src: null, caption: "Live slideshow display with dynamic content" }
+                    { src: "images/cms-home.png", caption: "Role-based dashboard with navigation to core features: upload content, manage slides, launch automatic slideshow, and change password. Implements Django authentication with conditional rendering - staff users see additional "Manage Users" card for upgrading/downgrading user permissions." },
+                    { src: "images/cms-upload.png", caption: "Content upload form with title field, custom text area, and image file handling. Built with Django forms, CSRF protection, and file validation. Includes helper text for user guidance and maintains design consistency throughout." },
+                    { src: "images/cms-manage.png", caption: "Content management table displaying all uploads with thumbnail previews and delete functionality. Uses Django ORM for database queries, displays newest content first, and includes hover effects for better UX. Delete operations secured with POST method and CSRF tokens." }
                 ],
-                title: "Capstone Project: Open Source CMS Display",
-                status: "IN PROGRESS",
+                title: "Open-Source Content Management System (CMS) Display",
+                status: "DECEMBER 2025",
                 contributors: "OTHER CONTRIBUTORS: Taylor Veneto, Kaymora Roberts, Aliana Slaven",
                 description: "Developed a full-stack Django web application for managing digital signage content on Raspberry Pi displays. The system enables administrators to upload, schedule, and display rotating content including images, announcements, and dynamic data through an automated slideshow interface.",
                 features: [
