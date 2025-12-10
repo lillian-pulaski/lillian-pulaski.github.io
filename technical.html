@@ -364,22 +364,9 @@
 
         function initMasonryLayout() {
             const grid = document.getElementById('masonry-grid');
-            const columns = [[], []]; // Two columns
             
-            projects.forEach((project, index) => {
-                const columnIndex = index % 2;
-                columns[columnIndex].push(createProjectCard(project));
-            });
-
-            // Create column containers
-            grid.innerHTML = `
-                <div style="display: flex; flex-direction: column; gap: 25px;">
-                    ${columns[0].join('')}
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 25px;">
-                    ${columns[1].join('')}
-                </div>
-            `;
+            // Simply insert all projects directly into the grid
+            grid.innerHTML = projects.map(project => createProjectCard(project)).join('');
         }
 
         // Initialize on page load
