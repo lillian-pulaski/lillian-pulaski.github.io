@@ -175,6 +175,69 @@
             margin-bottom: 15px;
         }
 
+        .carousel {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .carousel-slide {
+            display: none;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .carousel-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            font-size: 1.2em;
+        }
+
+        .carousel-btn:hover {
+            background: #5568d3;
+        }
+
+        .carousel-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: #667eea;
+        }
+
         .features-list {
             margin: 15px 0;
             padding-left: 20px;
@@ -322,7 +385,42 @@
             
             let imagesHTML = '';
             if (project.images && project.images.length > 0) {
-                imagesHTML = project.images.map(img => {
+                if (project.images.length > 1) {
+                    // Create carousel for multiple images
+                    const carouselId = `carousel-${project.title.replace(/\s+/g, '-').toLowerCase()}`;
+                    const slidesHTML = project.images.map((img, index) => {
+                        let imageDiv = '';
+                        if (img.src) {
+                            imageDiv = `<div class="project-image"><img src="${img.src}" alt="${project.title} Screenshot ${index + 1}"></div>`;
+                        } else {
+                            imageDiv = `<div class="project-image"></div>`;
+                        }
+                        
+                        let captionDiv = '';
+                        if (img.caption) {
+                            captionDiv = `<div class="image-caption">${img.caption}</div>`;
+                        }
+                        
+                        return `<div class="carousel-slide ${index === 0 ? 'active' : ''}">${imageDiv}${captionDiv}</div>`;
+                    }).join('');
+
+                    const dotsHTML = project.images.map((_, index) => 
+                        `<span class="carousel-dot ${index === 0 ? 'active' : ''}" onclick="goToSlide('${carouselId}', ${index})"></span>`
+                    ).join('');
+
+                    imagesHTML = `
+                        <div class="carousel" id="${carouselId}">
+                            ${slidesHTML}
+                            <div class="carousel-controls">
+                                <button class="carousel-btn" onclick="changeSlide('${carouselId}', -1)">‹</button>
+                                <div class="carousel-dots">${dotsHTML}</div>
+                                <button class="carousel-btn" onclick="changeSlide('${carouselId}', 1)">›</button>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    // Single image, no carousel needed
+                    const img = project.images[0];
                     let imageDiv = '';
                     if (img.src) {
                         imageDiv = `<div class="project-image"><img src="${img.src}" alt="${project.title} Screenshot"></div>`;
@@ -335,8 +433,8 @@
                         captionDiv = `<div class="image-caption">${img.caption}</div>`;
                     }
                     
-                    return `<div>${imageDiv}${captionDiv}</div>`;
-                }).join('');
+                    imagesHTML = `<div>${imageDiv}${captionDiv}</div>`;
+                }
             }
 
             let featuresHTML = '';
@@ -391,6 +489,41 @@
             console.log('Generated HTML length:', html.length);
             grid.innerHTML = html;
             console.log('Grid updated');
+        }
+
+        function changeSlide(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const dots = carousel.querySelectorAll('.carousel-dot');
+            
+            let currentIndex = 0;
+            slides.forEach((slide, index) => {
+                if (slide.classList.contains('active')) {
+                    currentIndex = index;
+                }
+            });
+            
+            slides[currentIndex].classList.remove('active');
+            dots[currentIndex].classList.remove('active');
+            
+            let newIndex = currentIndex + direction;
+            if (newIndex < 0) newIndex = slides.length - 1;
+            if (newIndex >= slides.length) newIndex = 0;
+            
+            slides[newIndex].classList.add('active');
+            dots[newIndex].classList.add('active');
+        }
+
+        function goToSlide(carouselId, index) {
+            const carousel = document.getElementById(carouselId);
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const dots = carousel.querySelectorAll('.carousel-dot');
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
         }
 
         // Try multiple initialization methods
