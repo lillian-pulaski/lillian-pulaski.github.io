@@ -265,7 +265,7 @@
         const projects = [
             {
                 images: [
-                    { src: "images/cms-home.png", caption: "Role-based dashboard with navigation to core features: upload content, manage slides, launch automatic slideshow, and change password. Implements Django authentication with conditional rendering - staff users see additional "Manage Users" card for upgrading/downgrading user permissions." },
+                    { src: "images/cms-home.png", caption: "Role-based dashboard with navigation to core features: upload content, manage slides, launch automatic slideshow, and change password. Implements Django authentication with conditional rendering - staff users see additional 'Manage Users' card for upgrading/downgrading user permissions." },
                     { src: "images/cms-upload.png", caption: "Content upload form with title field, custom text area, and image file handling. Built with Django forms, CSRF protection, and file validation. Includes helper text for user guidance and maintains design consistency throughout." },
                     { src: "images/cms-manage.png", caption: "Content management table displaying all uploads with thumbnail previews and delete functionality. Uses Django ORM for database queries, displays newest content first, and includes hover effects for better UX. Delete operations secured with POST method and CSRF tokens." }
                 ],
@@ -318,24 +318,40 @@
         ];
 
         function createProjectCard(project) {
-            const imagesHTML = project.images.map(img => `
-                <div>
-                    ${img.src ? `
-                        <div class="project-image">
-                            <img src="${img.src}" alt="${project.title} Screenshot">
-                        </div>
-                    ` : `
-                        <div class="project-image"></div>
-                    `}
-                    ${img.caption ? `<div class="image-caption">${img.caption}</div>` : ''}
-                </div>
-            `).join('');
+            console.log('Creating card for:', project.title);
+            
+            let imagesHTML = '';
+            if (project.images && project.images.length > 0) {
+                imagesHTML = project.images.map(img => {
+                    let imageDiv = '';
+                    if (img.src) {
+                        imageDiv = `<div class="project-image"><img src="${img.src}" alt="${project.title} Screenshot"></div>`;
+                    } else {
+                        imageDiv = `<div class="project-image"></div>`;
+                    }
+                    
+                    let captionDiv = '';
+                    if (img.caption) {
+                        captionDiv = `<div class="image-caption">${img.caption}</div>`;
+                    }
+                    
+                    return `<div>${imageDiv}${captionDiv}</div>`;
+                }).join('');
+            }
 
-            const featuresHTML = project.features ? `
-                <ul class="features-list">
-                    ${project.features.map(feature => `<li>${feature}</li>`).join('')}
-                </ul>
-            ` : '';
+            let featuresHTML = '';
+            if (project.features && project.features.length > 0) {
+                featuresHTML = '<ul class="features-list">' + 
+                    project.features.map(feature => `<li>${feature}</li>`).join('') +
+                    '</ul>';
+            }
+
+            let contributorsHTML = '';
+            if (project.contributors) {
+                contributorsHTML = `<h5>${project.contributors}</h5>`;
+            }
+
+            let tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
 
             return `
                 <div class="project">
@@ -345,11 +361,11 @@
                     <div class="project-header">
                         <h3>${project.title}</h3>
                         <h5>${project.status}</h5>
-                        ${project.contributors ? `<h5>${project.contributors}</h5>` : ''}
+                        ${contributorsHTML}
                         <p>${project.description}</p>
                         ${featuresHTML}
                         <div class="project-tags">
-                            ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                            ${tagsHTML}
                         </div>
                     </div>
                     <div class="project-links">
@@ -363,13 +379,27 @@
         }
 
         function initMasonryLayout() {
+            console.log('Initializing layout with', projects.length, 'projects');
             const grid = document.getElementById('masonry-grid');
             
-            // Simply insert all projects directly into the grid
-            grid.innerHTML = projects.map(project => createProjectCard(project)).join('');
+            if (!grid) {
+                console.error('Grid element not found!');
+                return;
+            }
+            
+            const html = projects.map(project => createProjectCard(project)).join('');
+            console.log('Generated HTML length:', html.length);
+            grid.innerHTML = html;
+            console.log('Grid updated');
         }
 
-        // Initialize on page load
+        // Try multiple initialization methods
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMasonryLayout);
+        } else {
+            initMasonryLayout();
+        }
+        
         window.addEventListener('load', initMasonryLayout);
     </script>
 </body>
