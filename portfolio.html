@@ -118,19 +118,17 @@
       grid-column: 1 / -1;
     }
 
-    .project.booklet .project-image {
-      border-radius: 0;
-      max-width: 600px;
-      margin: 0 auto;
+    .flipbook-container {
+      width: 100%;
+      max-width: 1012px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
     }
 
-    .project.booklet .project-image img {
-      border-radius: 0;
-    }
-
-    .project.booklet .project-gallery.spread {
-      max-width: 1200px;
-      margin: 0 auto 15px auto;
+    .flipbook-container iframe {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 8px;
     }
 
     .back-button {
@@ -173,7 +171,23 @@
 
   <div class="container">
     <div class="projects-grid">
-      <!-- 1. Kinetic Typography -->
+      <!-- 1. Typeface Booklet -->
+      <div class="project booklet">
+        <div class="project-header">
+          <h3>Typeface Booklet</h3>
+          <h5>DECEMBER 2025</h5>
+          <p>A comprehensive 28-page booklet showcasing typeface design principles, including cover design and interior spreads demonstrating typographic hierarchy and layout.</p>
+          <div class="project-tags">
+            <span class="tag">Adobe InDesign</span>
+            <span class="tag">Adobe Illustrator</span>
+          </div>
+        </div>
+        <div class="flipbook-container">
+          <iframe src='https://simplebooklet.com/embed.php?wpKey=svNp0kFIVrCtKHDd7CJPVN&source=embed' allowfullscreen width='100%' height='800' style='border: 0; overflow: hidden; width: 1px; min-width: 100%; max-width:1012px;' scrolling='no'></iframe>
+        </div>
+      </div>
+
+      <!-- 2. Kinetic Typography -->
       <div class="project full-width">
         <div class="project-header">
           <h3>Kinetic Typography</h3>
@@ -194,7 +208,7 @@
         </div>
       </div>
 
-      <!-- 2. White Mountains Poster -->
+      <!-- 3. White Mountains Poster -->
       <div class="project">
         <div class="project-header">
           <h3>White Mountains Travel Poster</h3>
@@ -212,7 +226,7 @@
         </div>
       </div>
 
-      <!-- 3. South Park Poster -->
+      <!-- 4. South Park Poster -->
       <div class="project">
         <div class="project-header">
           <h3>South Park Poster</h3>
@@ -229,7 +243,7 @@
         </div>
       </div>
 
-      <!-- 4. Techno-Tax Logo -->
+      <!-- 5. Techno-Tax Logo -->
       <div class="project full-width">
         <div class="project-header">
           <h3>Techno-Tax Logo</h3>
@@ -249,7 +263,7 @@
         </div>
       </div>
 
-      <!-- 5. CD Jewel Case -->
+      <!-- 6. CD Jewel Case -->
       <div class="project">
         <div class="project-header">
           <h3>CD Jewel Case Design</h3>
@@ -274,84 +288,6 @@
           </div>
           <div class="project-image">
             <img src="images/okcd_poster.png" alt="OK Computer Poster">
-          </div>
-        </div>
-      </div>
-
-      <!-- 6. Typeface Booklet -->
-      <div class="project booklet">
-        <div class="project-header">
-          <h3>Typeface Booklet</h3>
-          <h5>DECEMBER 2025</h5>
-          <p>A comprehensive 28-page booklet showcasing typeface design principles, including cover design and interior spreads demonstrating typographic hierarchy and layout.</p>
-          <div class="project-tags">
-            <span class="tag">Adobe InDesign</span>
-            <span class="tag">Adobe Illustrator</span>
-          </div>
-        </div>
-        <!-- Front Cover -->
-        <div class="project-gallery single">
-          <div class="project-image">
-            <img src="images/300_P4_Pulaski_Specimen_Page_01.jpg" alt="Typeface Booklet Front Cover">
-          </div>
-        </div>
-        <!-- Two-page spreads -->
-        <div class="project-gallery spread">
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_02.jpg" alt="Page 2"></div>
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_03.jpg" alt="Page 3"></div>
-        </div>
-        <div class="project-gallery spread">
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_04.jpg" alt="Page 4"></div>
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_05.jpg" alt="Page 5"></div>
-        </div>
-        <div class="project-gallery spread">
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_06.jpg" alt="Page 6"></div>
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_07.jpg" alt="Page 7"></div>
-        </div>
-        <div class="project-gallery spread">
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_08.jpg" alt="Page 8"></div>
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_09.jpg" alt="Page 9"></div>
-        </div>
-        <div class="project-gallery spread">
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_10.jpg" alt="Page 10"></div>
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_11.jpg" alt="Page 11"></div>
-        </div>
-        <div class="project-gallery spread">
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_12.jpg" alt="Page 12"></div>
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_13.jpg" alt="Page 13"></div>
-        </div>
-        <div class="project-gallery spread">
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_14.jpg" alt="Page 14"></div>
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_15.jpg" alt="Page 15"></div>
-        </div>
-        <div class="project-gallery spread">
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_16.jpg" alt="Page 16"></div>
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_17.jpg" alt="Page 17"></div>
-        </div>
-        <div class="project-gallery spread">
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_18.jpg" alt="Page 18"></div>
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_19.jpg" alt="Page 19"></div>
-        </div>
-        <div class="project-gallery spread">
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_20.jpg" alt="Page 20"></div>
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_21.jpg" alt="Page 21"></div>
-        </div>
-        <div class="project-gallery spread">
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_22.jpg" alt="Page 22"></div>
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_23.jpg" alt="Page 23"></div>
-        </div>
-        <div class="project-gallery spread">
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_24.jpg" alt="Page 24"></div>
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_25.jpg" alt="Page 25"></div>
-        </div>
-        <div class="project-gallery spread">
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_26.jpg" alt="Page 26"></div>
-          <div class="project-image"><img src="images/300_P4_Pulaski_Specimen_Page_27.jpg" alt="Page 27"></div>
-        </div>
-        <!-- Back Cover -->
-        <div class="project-gallery single">
-          <div class="project-image">
-            <img src="images/300_P4_Pulaski_Specimen_Page_28.jpg" alt="Typeface Booklet Back Cover">
           </div>
         </div>
       </div>
