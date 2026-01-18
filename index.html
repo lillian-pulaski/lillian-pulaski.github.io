@@ -133,7 +133,7 @@
 
     /* --- PORTFOLIO BUTTONS --- */
     .portfolio-buttons {
-      background: white;
+      background: #667eea;
       padding: 40px;
       max-width: 1100px;
       margin: 50px auto 40px auto;
@@ -142,7 +142,7 @@
     .portfolio-buttons h2 {
       text-align: center;
       font-size: 2em;
-      color: #1a1a1a;
+      color: white;
       margin-bottom: 20px;
       font-weight: 800;
       display: flex;
@@ -164,11 +164,11 @@
     }
 
     .portfolio-btn {
-      background: #667eea;
-      color: white;
-      border: 2px solid #667eea;
-      border-radius: 50px;
-      padding: 18px 45px;
+      background: white;
+      color: #667eea;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      padding: 12px 20px;
       font-size: 1.3em;
       font-weight: 700;
       transition: all 0.3s;
@@ -180,13 +180,40 @@
     }
 
     .portfolio-btn:hover {
-      background: white;
-      color: #667eea;
+      background: #667eea;
+      border: 2px solid white;
+      color: white;
     }
 
     .portfolio-btn i {
       font-size: 1.2em;
       transition: color 0.3s;
+      color: #667eea;
+    }
+
+    .portfolio-btn:hover i {
+      color: white;
+    }
+
+    /* --- PROFESSIONAL SUMMARY --- */
+    .professional-summary {
+      background: white;
+      padding: 40px;
+      max-width: 1100px;
+      margin: 50px auto 0 auto;
+    }
+
+    .professional-summary h2 {
+      font-size: 1.75em;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+    }
+
+    .professional-summary p {
+      color: #666;
+      font-size: 1.05em;
+      line-height: 1.7;
     }
 
     /* --- CONTENT --- */
@@ -414,6 +441,11 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="professional-summary">
+    <h2>PROFESSIONAL SUMMARY</h2>
+    <p>Results-driven finance professional with a strong foundation in economics and financial analysis, complemented by expertise in data analytics and graphic design. Experienced in corporate tax, process automation, and developing innovative solutions through technical proficiency in Python, Django, and database management. Passionate about leveraging quantitative skills and creative problem-solving to drive business value. Demonstrates strong communication and collaboration abilities through leadership roles in university organizations and volunteer work.</p>
   </div>
 
   <div class="portfolio-buttons">
