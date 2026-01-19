@@ -34,7 +34,7 @@
     }
 
     .header.scrolled {
-      padding: 15px 50px;
+      padding: 10px 50px 5px 50px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
 
@@ -63,6 +63,7 @@
 
     .header.scrolled .header-left {
       flex: 0 1 auto;
+      align-items: center;
     }
 
     .header-image {
@@ -81,9 +82,9 @@
     }
 
     .header.scrolled .header-image {
-      width: 60px;
-      height: 60px;
-      font-size: 36px;
+      width: 50px;
+      height: 50px;
+      font-size: 30px;
     }
 
     .header-image img {
@@ -99,30 +100,41 @@
     .header h1 {
       font-size: 3.5em;
       font-weight: 900;
-      margin-bottom: 5px;
+      margin-bottom: 0px;
       letter-spacing: -1px;
       transition: all 0.3s ease;
       line-height: 1;
+      display: flex;
+      align-items: center;
     }
 
     .header.scrolled h1 {
-      font-size: 2.8em;
+      font-size: 2.2em;
       margin-bottom: 0;
+      padding-top: 5px;
       line-height: 1;
       display: flex;
       align-items: center;
-      height: 60px;
+      height: 50px;
+    }
+
+    .header.scrolled h1::after {
+      content: " - Lillian Pulaski";
+      font-weight: 300;
+      font-size: 0.75em;
+      margin-left: 15px;
     }
 
     .subtitle {
-      font-size: 1.3em;
+      font-size: 2em;
       font-weight: 400;
       margin-bottom: 20px;
+      margin-top: 0px;
       transition: all 0.3s ease;
       opacity: 1;
       max-height: 100px;
       overflow: hidden;
-      text-align: center;
+      text-align: left;
     }
 
     .header.scrolled .subtitle {
