@@ -21,33 +21,106 @@
             color: #1a1a1a;
             background: #f8f9fa;
             zoom: 75%;
+            padding-top: 200px;
         }
 
+        /* --- HEADER --- */
         .header {
             background: #667eea;
             color: white;
-            padding: 50px 20px;
-            text-align: center;
-            margin-left: calc(-50vw / 0.75 + 50%);
-            margin-right: calc(-50vw / 0.75 + 50%);
+            padding: 40px 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            padding: 15px 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled .header-content {
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 0 1 auto;
+        }
+
+        .header.scrolled .header-left {
+            flex: 0 1 auto;
+            align-items: center;
+        }
+
+        .header-image {
+            width: 120px;
+            height: 120px;
+            flex-shrink: 0;
+            background: transparent;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 100px;
+        }
+
+        .header.scrolled .header-image {
+            width: 50px;
+            height: 50px;
+            font-size: 40px;
+        }
+
+        .header-text {
+            flex: 1;
         }
 
         .header h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             font-weight: 900;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
             letter-spacing: -1px;
+            transition: all 0.3s ease;
+            line-height: 1;
+            display: flex;
+            align-items: center;
         }
 
-        .header p {
-            font-size: 1.2em;
-            opacity: 0.9;
+        .header.scrolled h1 {
+            font-size: 2.2em;
+            margin-bottom: 0;
+            line-height: 1;
+            display: flex;
+            align-items: center;
         }
 
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto 40px auto;
             padding: 50px 20px;
+            background: white;
         }
 
         .projects-grid {
@@ -58,7 +131,7 @@
         }
 
         .project {
-            background: white;
+            background: #fff;
             border-radius: 12px;
             padding: 25px;
             border: 1px solid #f0f0f0;
@@ -250,11 +323,6 @@
             margin-bottom: 8px;
         }
 
-        .back-button-container {
-            text-align: center;
-            padding: 30px 0;
-        }
-
         .back-button {
             position: fixed;
             bottom: 20px;
@@ -262,36 +330,49 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: white;
-            color: #667eea;
+            background: #667eea;
+            color: white;
             padding: 12px 30px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1em;
-            border: 1px solid #f0f0f0;
+            border: 2px solid #667eea;
             transition: background 0.3s, border 0.3s, color 0.3s;
             z-index: 9999;
         }
 
         .back-button:hover {
-            background: #667eea;
-            border: 1px solid #667eea;
-            color: white;
-        }
-        
-        .back-button i {
+            background: white;
             color: #667eea;
-            transition: color 0.3s;
-        }
-        
-        .back-button:hover i {
-            color: white;
+            border-color: #667eea;
         }
 
         @media (max-width: 768px) {
+            body {
+                padding-top: 280px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .header-image {
+                display: none;
+            }
+
+            .header-text {
+                text-align: center;
+            }
+
             .header h1 {
-                font-size: 2em;
+                font-size: 2.5em;
             }
 
             .projects-grid {
@@ -306,9 +387,17 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>TECHNICAL PROJECTS</h1>
-        <p>Lillian Pulaski</p>
+    <div class="header" id="main-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="header-image">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <div class="header-text">
+                    <h1>TECHNICAL PROJECTS</h1>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="container">
@@ -316,15 +405,22 @@
             <!-- Projects will be inserted here by JavaScript -->
         </div>
         
-        <div class="back-button-container">
-            <a href="index.html" class="back-button">
-                <i class="fas fa-arrow-left"></i>
-                Back to Resume
-            </a>
-        </div>
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Home Page
+        </a>
     </div>
 
     <script>
+        // Shrinking header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
         const projects = [
             {
                 images: [
