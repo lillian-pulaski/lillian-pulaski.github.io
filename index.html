@@ -48,6 +48,12 @@
       width: 100%;
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .header.scrolled {
+      padding: 15px 50px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
 
     .header-content {
@@ -57,7 +63,24 @@
       align-items: center;
       justify-content: space-between;
       gap: 40px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      transition: all 0.3s ease;
+    }
+
+    .header.scrolled .header-content {
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 0 1 auto;
+    }
+
+    .header.scrolled .header-left {
+      flex: 0 1 auto;
     }
 
     .header-image {
@@ -67,6 +90,12 @@
       background: transparent;
       border-radius: 8px;
       overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .header.scrolled .header-image {
+      width: 60px;
+      height: 60px;
     }
 
     .header-image img {
@@ -84,18 +113,66 @@
       font-weight: 900;
       margin-bottom: 5px;
       letter-spacing: -1px;
+      transition: all 0.3s ease;
+    }
+
+    .header.scrolled h1 {
+      font-size: 1.8em;
+      margin-bottom: 0;
     }
 
     .location {
       font-size: 1.1em;
       font-weight: 800;
       margin-bottom: 20px;
+      transition: all 0.3s ease;
+      opacity: 1;
+      max-height: 100px;
+      overflow: hidden;
+    }
+
+    .header.scrolled .location {
+      opacity: 0;
+      max-height: 0;
+      margin-bottom: 0;
+    }
+
+    .header hr {
+      transition: all 0.3s ease;
+      opacity: 1;
+      max-height: 100px;
+      margin-bottom: 10px;
+    }
+
+    .header.scrolled hr {
+      opacity: 0;
+      max-height: 0;
+      margin-bottom: 0;
     }
 
     .contact {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
+      transition: all 0.3s ease;
+      opacity: 1;
+      max-height: 100px;
+      overflow: hidden;
+    }
+
+    .header.scrolled .contact {
+      opacity: 0;
+      max-height: 0;
+    }
+
+    .header-right {
+      display: none;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .header.scrolled .header-right {
+      display: flex;
     }
 
     .contact-item {
@@ -170,7 +247,7 @@
       border: 2px solid transparent;
       border-radius: 6px;
       padding: 12px 20px;
-      font-size: 1em;
+      font-size: 1.3em;
       font-weight: 600;
       transition: all 0.3s;
       display: flex;
@@ -414,31 +491,47 @@
 </head>
 
 <body>
-  <div class="header">
+  <div class="header" id="main-header">
     <div class="header-content">
-      <div class="header-image">
-        <img src="images/icon.svg" alt="Lillian Pulaski" height="250" width="250" />
-      </div>
-      <div class="header-text">
-        <h1>LILLIAN PULASKI</h1>
-        <hr />
-        <br />
-        <div class="location">
-          <i class="fas fa-map-marker-alt"></i> BOSTON, MA
+      <div class="header-left">
+        <div class="header-image">
+          <img src="images/icon.svg" alt="Lillian Pulaski" height="250" width="250" />
         </div>
-        <div class="contact" style="justify-content: flex-start">
-          <div class="contact-item">
-            <a href="https://www.linkedin.com/in/lillian-pulaski-b7491a246" target="_blank">
-              <i class="fab fa-linkedin"></i>
-              <span>LinkedIn</span>
-            </a>
+        <div class="header-text">
+          <h1>LILLIAN PULASKI</h1>
+          <hr />
+          <br />
+          <div class="location">
+            <i class="fas fa-map-marker-alt"></i> BOSTON, MA
           </div>
-          <div class="contact-item">
-            <a href="https://github.com/lillian-pulaski" target="_blank">
-              <i class="fab fa-github"></i>
-              <span>GitHub</span>
-            </a>
+          <div class="contact">
+            <div class="contact-item">
+              <a href="https://www.linkedin.com/in/lillian-pulaski-b7491a246" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+            <div class="contact-item">
+              <a href="https://github.com/lillian-pulaski" target="_blank">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+            </div>
           </div>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="contact-item">
+          <a href="https://www.linkedin.com/in/lillian-pulaski-b7491a246" target="_blank">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+        <div class="contact-item">
+          <a href="https://github.com/lillian-pulaski" target="_blank">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
         </div>
       </div>
     </div>
@@ -446,7 +539,7 @@
 
   <div class="professional-summary">
     <h2>PROFESSIONAL SUMMARY</h2>
-    <p>Data-driven finance professional graduating Spring 2026 from Binghamton University with a B.S. in Economics (Financial Analysis specialization) and minors in Digital and Data Studies and Graphic Design. Incoming Corporate Finance Senior Associate at State Street Corporation, where I previously supported Corporate Tax initiatives as an intern through R&D tax credit documentation, cross-functional data analysis, and the development of Alteryx automation workflows. Combines strong quantitative and analytical skills with technical expertise in Python, Django, SQL, and database management, alongside visual communication strengths in Adobe Creative Cloud and web design. Demonstrated leadership through executive roles in campus organizations and a continued commitment to community impact through long-term graphic design volunteer work for My Brother's Table Soup Kitchen.</p> 
+    <p>Finance professional set to graduate from Binghamton University in Spring 2026 with a B.S. in Economics (Financial Analysis specialization) and minors in Digital and Data Studies and Graphic Design. Following graduation, I'll be joining State Street Corporation as a Corporate Finance Senior Associate, building on my summer 2025 internship experience where I worked with the Corporate Tax team on R&D tax credit analysis and developed automation workflows in Alteryx. I bring together analytical and technical skills—including Python, Django, SQL, and web development—with a creative edge in graphic design. Outside the classroom, I've enjoyed leadership roles with the Binghamton University Scholars Program Council and Italian Student Organization, and have been designing marketing materials for My Brother's Table Soup Kitchen since 2020.</p>
   </div>
 
   <div class="portfolio-buttons">
@@ -579,5 +672,17 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // Shrinking header on scroll
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('main-header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
 </html>
