@@ -118,7 +118,7 @@
     }
 
     .header.scrolled h1 {
-      font-size: 2.8em;
+      font-size: 3.5em;
       margin-bottom: 0;
       line-height: 1;
       display: flex;
@@ -182,9 +182,14 @@
 
     .contact-item {
       background: white;
-      border-radius: 6px;
+      border-radius: 50%;
       transition: background 0.3s, border 0.3s;
       border: 2px solid transparent;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .contact-item:hover {
@@ -195,11 +200,21 @@
     .contact-item a {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 7px 13px;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      padding: 0;
       color: #667eea;
       text-decoration: none;
       transition: color 0.3s;
+    }
+
+    .contact-item a span {
+      display: none;
+    }
+
+    .header.scrolled .contact-item a span {
+      display: none;
     }
 
     .contact-item:hover a,
@@ -208,7 +223,7 @@
     }
 
     .contact-item i {
-      font-size: 1.1em;
+      font-size: 1.3em;
       color: #667eea;
       transition: color 0.3s;
     }
@@ -456,8 +471,8 @@
       }
 
       .portfolio-buttons {
-        padding: 20px;
-        margin: 20px;
+        padding: 15px;
+        margin: 15px;
       }
 
       .button-container {
@@ -470,13 +485,18 @@
         justify-content: center;
       }
 
+      .professional-summary {
+        padding: 15px;
+        margin: 15px auto;
+      }
+
       .content {
-        padding: 30px 20px;
+        padding: 15px;
       }
 
       .intro {
         grid-template-columns: 1fr;
-        padding: 30px 20px;
+        padding: 15px;
       }
 
       .intro-label {
