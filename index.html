@@ -32,7 +32,7 @@
 
     .container {
       max-width: 1100px;
-      margin: 0 auto;
+      margin: 0 auto 40px auto;
       background: white;
     }
 
@@ -94,8 +94,8 @@
     }
 
     .header.scrolled .header-image {
-      width: 60px;
-      height: 60px;
+      width: 45px;
+      height: 45px;
     }
 
     .header-image img {
@@ -120,7 +120,9 @@
     .header.scrolled h1 {
       font-size: 2.2em;
       margin-bottom: 0;
-      line-height: 60px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
     }
 
     .location {
@@ -208,6 +210,31 @@
       font-size: 1.1em;
       color: #667eea;
       transition: color 0.3s;
+    }
+
+    /* Circle buttons for scrolled header */
+    .header.scrolled .contact-item {
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header.scrolled .contact-item a {
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+    }
+
+    .header.scrolled .contact-item a span {
+      display: none;
+    }
+
+    .header.scrolled .contact-item i {
+      font-size: 1.3em;
     }
 
     /* --- PORTFOLIO BUTTONS --- */
