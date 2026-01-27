@@ -22,7 +22,7 @@
     .header {
       background: #667eea;
       color: white;
-      padding: 40px 50px;
+      padding: 40px 80px;
       position: fixed;
       top: 0;
       left: 0;
@@ -34,12 +34,12 @@
     }
 
     .header.scrolled {
-      padding: 15px 50px;
+      padding: 15px 80px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
 
     .header-content {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -207,10 +207,9 @@
 
     /* --- CONTAINER --- */
     .container { 
-      max-width: 1200px; 
+      max-width: 1400px; 
       margin: 0 auto 40px auto; 
-      padding: 50px 20px; 
-      background: white;
+      padding: 50px 80px; 
     }
 
     .projects-grid {
@@ -339,6 +338,17 @@
       border-color: #667eea;
     }
 
+    .back-button img {
+      width: 20px;
+      height: 20px;
+      filter: brightness(0) invert(1);
+      transition: 0.3s;
+    }
+
+    .back-button:hover img {
+      filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1352%) hue-rotate(224deg) brightness(102%) contrast(101%);
+    }
+
     @media (max-width: 768px) {
       body {
         padding-top: 280px;
@@ -346,6 +356,10 @@
 
       .header {
         padding: 30px 20px;
+      }
+
+      .header.scrolled {
+        padding: 15px 20px;
       }
 
       .header-content {
@@ -368,6 +382,10 @@
 
       .contact {
         justify-content: center;
+      }
+
+      .container {
+        padding: 50px 20px;
       }
 
       .projects-grid { 
@@ -544,7 +562,8 @@
     </div>
 
     <a href="index.html" class="back-button">
-      <i class="fas fa-arrow-left"></i> Back to Home Page
+      <img src="https://cdn-icons-png.flaticon.com/512/5529/5529927.png" alt="Back arrow">
+      Back to Home Page
     </a>
   </div>
 
