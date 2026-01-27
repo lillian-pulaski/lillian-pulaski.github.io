@@ -16,6 +16,7 @@
       line-height: 1.6;
       zoom: 75%;
       padding-top: 200px;
+      padding-bottom: 80px;
     }
 
     /* --- HEADER --- */
@@ -207,8 +208,8 @@
 
     /* --- CONTAINER --- */
     .container { 
-      max-width: 1400px; 
-      margin: 0 auto 40px auto; 
+      max-width: 1600px; 
+      margin: 0 auto 0 auto; 
       padding: 50px 80px; 
     }
 
@@ -224,25 +225,36 @@
       border-radius: 12px;
       padding: 25px;
       border: 1px solid #f0f0f0;
+      display: flex;
+      flex-direction: row;
+      gap: 25px;
+      align-items: flex-start;
     }
 
     /* Full-width projects */
     .project.full-width {
       grid-column: 1 / -1;
-      display: flex;
-      flex-direction: row;
-      gap: 30px;
-      align-items: center;
     }
 
-    .project.full-width .project-header { flex: 1; }
-    .project.full-width .project-gallery { flex: 1; display: flex; gap: 20px; justify-content: center; }
+    .project-gallery-wrapper {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .project-header {
+      flex: 0 0 300px;
+      display: flex;
+      flex-direction: column;
+    }
 
     .project-header h3 {
       font-size: 1.5em;
-      font-weight: 700;
+      font-weight: 900;
       margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
     }
+
     .project-header h5 {
       color: #555;
       margin-bottom: 10px;
@@ -265,17 +277,21 @@
     .project-gallery {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      gap: 15px;
     }
 
-    .project-gallery.single { grid-template-columns: 1fr; }
-    .project-gallery.stacked { grid-template-columns: 1fr; }
-    .project-gallery.stacked .project-image { margin-bottom: 15px; }
+    .project-gallery.single { 
+      grid-template-columns: 1fr; 
+    }
+    
+    .project-gallery.stacked { 
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
     
     .project-gallery.spread { 
       grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
-      margin-bottom: 15px;
+      gap: 15px;
     }
 
     .project-image {
@@ -298,6 +314,12 @@
     /* Typeface booklet specific styles */
     .project.booklet {
       grid-column: 1 / -1;
+      flex-direction: column;
+    }
+
+    .project.booklet .project-header {
+      flex: none;
+      margin-bottom: 20px;
     }
 
     .flipbook-container {
@@ -313,9 +335,29 @@
       border-radius: 8px;
     }
 
+    /* Footer */
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: white;
+      padding: 20px 80px;
+      text-align: center;
+      border-top: 1px solid #e0e0e0;
+      z-index: 999;
+    }
+
+    .footer p {
+      margin: 0;
+      color: #666;
+      font-size: 0.9em;
+    }
+
     .back-button {
       position: fixed;
-      bottom: 20px;
+      bottom: 90px;
       right: 20px;
       background: #667eea;
       color: white;
@@ -347,6 +389,12 @@
 
     .back-button:hover img {
       filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1352%) hue-rotate(224deg) brightness(102%) contrast(101%);
+    }
+
+    @media (max-width: 1200px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 768px) {
@@ -388,17 +436,25 @@
         padding: 50px 20px;
       }
 
+      .footer {
+        padding: 20px;
+      }
+
       .projects-grid { 
         grid-template-columns: 1fr; 
         gap: 20px; 
       }
       
-      .project.full-width { 
+      .project { 
         flex-direction: column; 
       }
+
+      .project-header {
+        flex: none;
+      }
       
-      .project.full-width .project-gallery { 
-        flex-direction: column; 
+      .project-gallery { 
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -446,12 +502,14 @@
             <span class="tag">Adobe Photoshop</span>
           </div>
         </div>
-        <div class="project-gallery">
-          <div class="project-image">
-            <img src="images/300_P2_Pulaski_Word1_Rigid.gif" alt="Rigid GIF">
-          </div>
-          <div class="project-image">
-            <img src="images/300_P2_Pulaski_Word2_Fluid.gif" alt="Fluid GIF">
+        <div class="project-gallery-wrapper">
+          <div class="project-gallery spread">
+            <div class="project-image">
+              <img src="images/300_P2_Pulaski_Word1_Rigid.gif" alt="Rigid GIF">
+            </div>
+            <div class="project-image">
+              <img src="images/300_P2_Pulaski_Word2_Fluid.gif" alt="Fluid GIF">
+            </div>
           </div>
         </div>
       </div>
@@ -467,9 +525,11 @@
             <span class="tag">Adobe Photoshop</span>
           </div>
         </div>
-        <div class="project-gallery single">
-          <div class="project-image">
-            <img src="images/nhwm_poster.png" alt="White Mountains Poster">
+        <div class="project-gallery-wrapper">
+          <div class="project-gallery single">
+            <div class="project-image">
+              <img src="images/nhwm_poster.png" alt="White Mountains Poster">
+            </div>
           </div>
         </div>
       </div>
@@ -484,9 +544,11 @@
             <span class="tag">Adobe Illustrator</span>
           </div>
         </div>
-        <div class="project-gallery single">
-          <div class="project-image">
-            <img src="images/sp_poster.png" alt="South Park Poster">
+        <div class="project-gallery-wrapper">
+          <div class="project-gallery single">
+            <div class="project-image">
+              <img src="images/sp_poster.png" alt="South Park Poster">
+            </div>
           </div>
         </div>
       </div>
@@ -501,12 +563,14 @@
             <span class="tag">Adobe Illustrator</span>
           </div>
         </div>
-        <div class="project-gallery">
-          <div class="project-image">
-            <img src="images/technotax_logo-BW.png" alt="Techno Tax BW Logo">
-          </div>
-          <div class="project-image">
-            <img src="images/technotax_logo-CO.png" alt="Techno Tax Color Logo">
+        <div class="project-gallery-wrapper">
+          <div class="project-gallery spread">
+            <div class="project-image">
+              <img src="images/technotax_logo-BW.png" alt="Techno Tax BW Logo">
+            </div>
+            <div class="project-image">
+              <img src="images/technotax_logo-CO.png" alt="Techno Tax Color Logo">
+            </div>
           </div>
         </div>
       </div>
@@ -522,20 +586,20 @@
             <span class="tag">UV Printing</span>
           </div>
         </div>
-        <div class="project-gallery">
-          <div class="project-image">
-            <img src="images/okcd_cover.jpg" alt="OK Computer Cover">
-          </div>
-          <div class="project-image">
-            <img src="images/okcd_back.jpg" alt="OK Computer Back">
-          </div>
-        </div>
-        <div class="project-gallery stacked">
-          <div class="project-image">
-            <img src="images/okcd_inside.jpg" alt="OK Computer Inside">
-          </div>
-          <div class="project-image">
-            <img src="images/okcd_poster.png" alt="OK Computer Poster">
+        <div class="project-gallery-wrapper">
+          <div class="project-gallery stacked">
+            <div class="project-image">
+              <img src="images/okcd_cover.jpg" alt="OK Computer Cover">
+            </div>
+            <div class="project-image">
+              <img src="images/okcd_back.jpg" alt="OK Computer Back">
+            </div>
+            <div class="project-image">
+              <img src="images/okcd_inside.jpg" alt="OK Computer Inside">
+            </div>
+            <div class="project-image">
+              <img src="images/okcd_poster.png" alt="OK Computer Poster">
+            </div>
           </div>
         </div>
       </div>
@@ -550,13 +614,15 @@
             <span class="tag">Adobe Illustrator</span>
           </div>
         </div>
-        <div class="project-gallery">
-          <div class="project-image"><img src="images/lss-p1.png" alt="Panel 1"></div>
-          <div class="project-image"><img src="images/lss-p2.png" alt="Panel 2"></div>
-          <div class="project-image"><img src="images/lss-p5.png" alt="Panel 5"></div>
-          <div class="project-image"><img src="images/lss-p6.png" alt="Panel 6"></div>
-          <div class="project-image"><img src="images/lss-p8.png" alt="Panel 8"></div>
-          <div class="project-image"><img src="images/lss-p9.png" alt="Panel 9"></div>
+        <div class="project-gallery-wrapper">
+          <div class="project-gallery">
+            <div class="project-image"><img src="images/lss-p1.png" alt="Panel 1"></div>
+            <div class="project-image"><img src="images/lss-p2.png" alt="Panel 2"></div>
+            <div class="project-image"><img src="images/lss-p5.png" alt="Panel 5"></div>
+            <div class="project-image"><img src="images/lss-p6.png" alt="Panel 6"></div>
+            <div class="project-image"><img src="images/lss-p8.png" alt="Panel 8"></div>
+            <div class="project-image"><img src="images/lss-p9.png" alt="Panel 9"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -565,6 +631,10 @@
       <img src="https://cdn-icons-png.flaticon.com/512/5529/5529927.png" alt="Back arrow">
       Back to Home Page
     </a>
+  </div>
+
+  <div class="footer">
+    <p>Lillian Pulaski &copy; 2025</p>
   </div>
 
   <script>
