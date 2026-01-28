@@ -230,9 +230,9 @@
       align-items: flex-start;
     }
 
-    /* Remove full-width spanning - keep all projects in 2 columns */
+    /* Full-width projects - span both columns */
     .project.full-width {
-      grid-column: auto;
+      grid-column: 1 / -1;
       max-width: 100%;
     }
 
@@ -363,7 +363,11 @@
     .back-button img {
       width: 20px;
       height: 20px;
-      filter: brightness(0) invert(1);
+      color: #667eea;
+    }
+
+    .back-button:hover img {
+      filter: none;
     }
 
     /* Fullscreen Modal */
@@ -387,16 +391,13 @@
     }
 
     .fullscreen-content {
-      max-width: 95%;
-      max-height: 90vh;
+      max-width: 90%;
+      max-height: 85vh;
       overflow-y: auto;
       margin: 0 auto;
       background: white;
       border-radius: 12px;
       padding: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .fullscreen-content .project {
@@ -758,15 +759,15 @@
           const imgClone = document.createElement('img');
           imgClone.src = img.src;
           imgClone.alt = img.alt;
-          imgClone.style.maxWidth = '90vw';
-          imgClone.style.maxHeight = '85vh';
+          imgClone.style.maxWidth = '100%';
+          imgClone.style.maxHeight = '80vh';
           imgClone.style.borderRadius = '8px';
           imgClone.style.objectFit = 'contain';
           
           modalContent.innerHTML = '';
           modalContent.appendChild(imgClone);
-          modalContent.style.padding = '40px';
-          modalContent.style.background = 'white';
+          modalContent.style.padding = '0';
+          modalContent.style.background = 'transparent';
           modalContent.style.maxWidth = '95%';
           modal.classList.add('active');
           document.body.style.overflow = 'hidden';
@@ -777,12 +778,16 @@
     closeBtn.addEventListener('click', function() {
       modal.classList.remove('active');
       document.body.style.overflow = 'auto';
+      modalContent.style.padding = '40px';
+      modalContent.style.background = 'white';
     });
 
     modal.addEventListener('click', function(e) {
       if (e.target === modal) {
         modal.classList.remove('active');
         document.body.style.overflow = 'auto';
+        modalContent.style.padding = '40px';
+        modalContent.style.background = 'white';
       }
     });
   </script>
